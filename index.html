@@ -455,6 +455,60 @@
       transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
     }
 
+    /* 7. OLD MEMORIES (Staggered Entrance & Cinematic Photo Hover) */
+    .reveal-old-memories-title {
+      opacity: 0;
+      transform: translate3d(0, 25px, 0);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-old-memories-img-1 {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+      will-change: opacity, transform;
+    }
+    .reveal-old-memories-img-2 {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.30s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.30s;
+      will-change: opacity, transform;
+    }
+    .reveal-old-memories-img-3 {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s;
+      will-change: opacity, transform;
+    }
+    .revealed .reveal-old-memories-title,
+    .revealed .reveal-old-memories-img-1,
+    .revealed .reveal-old-memories-img-2,
+    .revealed .reveal-old-memories-img-3 {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* Old Memories Photo Frame & Subtle Desktop Hover */
+    .old-memory-frame {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+      will-change: transform, box-shadow;
+    }
+    .old-memory-frame img {
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+      will-change: transform, filter;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .old-memory-frame:hover {
+        transform: translateY(-4px);
+        border-color: rgba(245, 158, 11, 0.55);
+        box-shadow: 0 16px 35px -10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(245, 158, 11, 0.12);
+      }
+      .old-memory-frame:hover img {
+        transform: scale(1.04);
+        filter: brightness(1.05);
+      }
+    }
+
     /* ========================================================= */
     /* MOBILE-ONLY HERO / GIFT SCREEN RESPONSIVE (320px - 767px) */
     /* DESKTOP (768px+) REMAINS COMPLETELY UNCHANGED            */
@@ -1225,6 +1279,94 @@
               <div class="p-3 xs:p-4 rounded-xl sm:rounded-2xl bg-black/50 border border-white/10">
                 <span class="font-cinzel text-xl sm:text-2xl font-bold text-amber-400 block">Pure</span>
                 <span class="text-[10px] xs:text-xs uppercase text-slate-400 font-mono">Heart of Gold</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+    </section>
+ 
+    <!-- ========================================================= -->
+    <!-- NOSTALGIC INTERLUDE: OLD MEMORIES                         -->
+    <!-- ========================================================= -->
+    <section id="old-memories"
+      class="relative py-16 sm:py-20 px-3.5 sm:px-6 border-t border-amber-500/15 overflow-hidden bg-[#06070B]">
+      
+      <!-- Subtle Ambient Golden Glow -->
+      <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <div class="w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(245,158,11,0.08)_0%,transparent_70%)] filter blur-3xl"></div>
+      </div>
+
+      <div class="max-w-5xl mx-auto relative z-10">
+
+        <!-- Section Title & Subtext with Subtle Entrance Animation -->
+        <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12 reveal-old-memories-title">
+          <div
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[10px] xs:text-xs font-mono uppercase tracking-[0.2em] mb-2.5">
+            <span>✨ Nostalgic Moments</span>
+          </div>
+          <h2 class="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wide">
+            OLD MEMORIES
+          </h2>
+          <p class="font-serif italic text-xs xs:text-sm sm:text-base text-amber-200/80 mt-1.5 sm:mt-2">
+            “Some moments never get old.”
+          </p>
+        </div>
+
+        <!-- Three Memories Layout (Horizontally balanced on desktop, stacked on mobile) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 max-w-4xl mx-auto items-stretch px-2 sm:px-0">
+
+          <!-- Memory 01 -->
+          <div class="reveal-old-memories-img-1 flex flex-col items-center">
+            <div
+              class="old-memory-frame w-full max-w-[320px] md:max-w-none mx-auto rounded-2xl overflow-hidden border border-amber-500/25 bg-black/60 shadow-xl shadow-black/80 relative">
+              <div class="relative aspect-[3/4] sm:aspect-[4/5] md:aspect-[3/4] overflow-hidden bg-[#0D0E15]">
+                <img src="images/old_memory_1.png" alt="AnbuMani - Old Memory 01"
+                  class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
+                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                  <span
+                    class="px-2.5 py-0.5 rounded-md bg-black/80 border border-amber-400/30 text-amber-300 font-mono text-[9px] sm:text-[10px] tracking-widest uppercase backdrop-blur-sm">
+                    MEMORY 01
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memory 02 -->
+          <div class="reveal-old-memories-img-2 flex flex-col items-center">
+            <div
+              class="old-memory-frame w-full max-w-[320px] md:max-w-none mx-auto rounded-2xl overflow-hidden border border-amber-500/25 bg-black/60 shadow-xl shadow-black/80 relative">
+              <div class="relative aspect-[3/4] sm:aspect-[4/5] md:aspect-[3/4] overflow-hidden bg-[#0D0E15]">
+                <img src="images/old_memory_2.png" alt="AnbuMani - Old Memory 02"
+                  class="w-full h-full object-cover object-top" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
+                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                  <span
+                    class="px-2.5 py-0.5 rounded-md bg-black/80 border border-amber-400/30 text-amber-300 font-mono text-[9px] sm:text-[10px] tracking-widest uppercase backdrop-blur-sm">
+                    MEMORY 02
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memory 03 -->
+          <div class="reveal-old-memories-img-3 flex flex-col items-center">
+            <div
+              class="old-memory-frame w-full max-w-[320px] md:max-w-none mx-auto rounded-2xl overflow-hidden border border-amber-500/25 bg-black/60 shadow-xl shadow-black/80 relative">
+              <div class="relative aspect-[3/4] sm:aspect-[4/5] md:aspect-[3/4] overflow-hidden bg-[#0D0E15]">
+                <img src="images/old_memory_3.png" alt="AnbuMani - Old Memory 03"
+                  class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
+                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                  <span
+                    class="px-2.5 py-0.5 rounded-md bg-black/80 border border-amber-400/30 text-amber-300 font-mono text-[9px] sm:text-[10px] tracking-widest uppercase backdrop-blur-sm">
+                    MEMORY 03
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -2512,7 +2654,7 @@
     // =========================================================
     function initSectionScrollAnimations() {
       const sections = document.querySelectorAll(
-        '#prologue, #school, #college, #comedy-vault, #character, #level22'
+        '#prologue, #old-memories, #school, #college, #comedy-vault, #character, #level22'
       );
 
       if (!('IntersectionObserver' in window)) {
