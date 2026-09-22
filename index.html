@@ -897,6 +897,12 @@
       class="h-full w-0 bg-gradient-to-r from-amber-400 via-rose-500 to-amber-300 shadow-[0_0_12px_#F59E0B]"></div>
   </div>
 
+  <!-- Background Soundtrack: The Red Dragon -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="audio/the_red_dragon.mp3" type="audio/mpeg" />
+    <source src="The Red Dragon.mp3" type="audio/mpeg" />
+  </audio>
+
   <!-- Ambient Audio & Confetti Floating Island -->
   <div id="quick-controls" class="fixed z-40 hidden flex-col gap-2.5">
     <button onclick="launchBirthdayConfetti()"
@@ -905,9 +911,9 @@
       <i data-lucide="sparkles" class="w-6 h-6"></i>
     </button>
     <button id="audio-toggle-btn" onclick="toggleAmbientMusic()"
-      class="w-12 h-12 rounded-full bg-slate-900/90 border border-amber-500/40 text-amber-400 flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition"
-      title="Nostalgic Soundtrack" aria-label="Toggle Music">
-      <i id="audio-toggle-icon" data-lucide="music" class="w-5 h-5"></i>
+      class="w-12 h-12 rounded-full bg-slate-900/95 border border-amber-500/50 text-amber-400 flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition cursor-pointer"
+      title="Mute / Unmute Soundtrack" aria-label="Mute or Unmute Music">
+      <i id="audio-toggle-icon" data-lucide="volume-2" class="w-5 h-5"></i>
     </button>
   </div>
 
@@ -1067,8 +1073,14 @@
           <a href="#level22" class="hover:text-amber-400 transition">Our Gift 🎁</a>
         </nav>
 
-        <!-- Salute / Wish Button -->
+        <!-- Salute / Wish Button & Soundtrack Controls -->
         <div class="flex items-center gap-2">
+          <button id="nav-audio-btn" onclick="toggleAmbientMusic()"
+            class="px-2.5 sm:px-3 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/40 text-amber-400 hover:text-amber-300 hover:border-amber-400 text-[10px] xs:text-xs font-mono tracking-wider flex items-center gap-1.5 shadow-md active:scale-95 transition cursor-pointer"
+            title="Mute / Unmute Soundtrack" aria-label="Toggle Soundtrack">
+            <i id="nav-audio-icon" data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+            <span id="nav-audio-label" class="hidden xs:inline">Music</span>
+          </button>
           <button onclick="launchBirthdayConfetti()"
             class="px-3 xs:px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 text-black font-bold text-[10px] xs:text-xs uppercase tracking-wider shadow-md hover:scale-105 active:scale-95 transition flex items-center gap-1.5">
             <i data-lucide="heart" class="w-3.5 h-3.5 fill-black"></i>
@@ -2331,39 +2343,127 @@
       });
     }
 
-    function playNostalgicSequence() {
-      if (!audioCtx) return;
-      const now = audioCtx.currentTime;
-      const chords = [
-        [293.66, 369.99, 440.00], // D Major
-        [246.94, 293.66, 369.99], // B Minor
-        [196.00, 246.94, 293.66], // G Major
-        [220.00, 277.18, 329.63]  // A Major
-      ];
+    // 5. Tactile Button Click Sound Effect
+    function playButtonClickSound() {
+      try {
+        initWebAudio();
+        if (!audioCtx) return;
+        const now = audioCtx.currentTime;
 
-      chords.forEach((chord, cIdx) => {
-        chord.forEach((freq, nIdx) => {
-          playNote(freq, now + cIdx * 1.6 + nIdx * 0.25, 2.0);
-        });
-      });
+        // Acoustic tactile pop / mechanical snap click transient
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(1400, now);
+        osc.frequency.exponentialRampToValueAtTime(280, now + 0.03);
+
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.03);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.035);
+      } catch (e) { }
+    }
+
+    // Attach tactile click sound to all buttons & interactive clickable items
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button, .cursor-pointer, input[type="submit"], [role="button"]');
+      if (btn) {
+        playButtonClickSound();
+      }
+    });
+
+    // 6. Background Soundtrack Controller (The Red Dragon.mp3)
+    let bgAudio = null;
+    let isMusicPlaying = false;
+
+    function getBgAudio() {
+      if (!bgAudio) {
+        bgAudio = document.getElementById('bg-audio');
+        if (bgAudio) {
+          bgAudio.volume = 0.65;
+          bgAudio.loop = true;
+
+          bgAudio.addEventListener('play', () => {
+            isMusicPlaying = true;
+            updateAudioUI(true);
+          });
+          bgAudio.addEventListener('pause', () => {
+            isMusicPlaying = false;
+            updateAudioUI(false);
+          });
+        }
+      }
+      return bgAudio;
+    }
+
+    function updateAudioUI(isPlaying) {
+      const quickIcon = document.getElementById('audio-toggle-icon');
+      const quickBtn = document.getElementById('audio-toggle-btn');
+      const navIcon = document.getElementById('nav-audio-icon');
+      const navLabel = document.getElementById('nav-audio-label');
+
+      const iconName = isPlaying ? 'volume-2' : 'volume-x';
+
+      if (quickIcon) quickIcon.setAttribute('data-lucide', iconName);
+      if (navIcon) navIcon.setAttribute('data-lucide', iconName);
+      if (navLabel) navLabel.textContent = isPlaying ? 'Music: ON' : 'Music: OFF';
+
+      if (quickBtn) {
+        if (isPlaying) {
+          quickBtn.classList.add('border-amber-400', 'shadow-[0_0_20px_rgba(245,158,11,0.4)]');
+          quickBtn.classList.remove('opacity-70');
+        } else {
+          quickBtn.classList.remove('border-amber-400', 'shadow-[0_0_20px_rgba(245,158,11,0.4)]');
+          quickBtn.classList.add('opacity-70');
+        }
+      }
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
     }
 
     function toggleAmbientMusic(forceStart = false) {
       initWebAudio();
-      const icon = document.getElementById('audio-toggle-icon');
+      const audio = getBgAudio();
+      if (!audio) return;
 
-      if (isPlayingAudio && !forceStart) {
-        clearInterval(melodyTimer);
-        isPlayingAudio = false;
-        if (icon) icon.setAttribute('data-lucide', 'volume-x');
-        lucide.createIcons();
-        showToast('Soundtrack paused');
+      if (forceStart) {
+        audio.muted = false;
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            isMusicPlaying = true;
+            updateAudioUI(true);
+          }).catch(err => {
+            console.log('Autoplay pending user gesture:', err);
+          });
+        }
+        return;
+      }
+
+      if (audio.paused || audio.muted) {
+        audio.muted = false;
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            isMusicPlaying = true;
+            updateAudioUI(true);
+            showToast('🎵 Soundtrack: The Red Dragon (Playing)');
+          }).catch(err => {
+            console.warn('Playback error:', err);
+          });
+        }
       } else {
-        isPlayingAudio = true;
-        if (icon) icon.setAttribute('data-lucide', 'volume-2');
-        lucide.createIcons();
-        playNostalgicSequence();
-        melodyTimer = setInterval(playNostalgicSequence, 6500);
+        audio.pause();
+        isMusicPlaying = false;
+        updateAudioUI(false);
+        showToast('🔇 Soundtrack muted');
       }
     }
 
