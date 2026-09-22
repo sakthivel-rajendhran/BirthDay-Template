@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+
+# Raw camera recordings (>100MB exceeds GitHub file limit)
+videos/video_*.mp4
+
+# OS generated files
+.DS_Store
+Thumbs.db

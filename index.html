@@ -1,0 +1,2561 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#06070B" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description"
+    content="A Little Gift, A Lot of Memories | A Special Birthday Surprise for AnbuMani from College & Hostel Friends" />
+  <title>A Little Gift, A Lot of Memories | For AnbuMani ❤️</title>
+
+  <!-- Google Fonts: Cinzel Decorative, Outfit, Rozha One, Baloo Thambi 2 (Tamil) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Rozha+One&display=swap"
+    rel="stylesheet">
+
+  <!-- Suppress Tailwind CDN production notice in console -->
+  <script>
+    (function () {
+      const origWarn = console.warn;
+      console.warn = function (...args) {
+        if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) return;
+        origWarn.apply(console, args);
+      };
+    })( );
+  </script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          'xs': '375px',
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+        },
+        extend: {
+          fontFamily: {
+            sans: ['"Outfit"', 'sans-serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            cinzelDeco: ['"Cinzel Decorative"', 'serif'],
+            tamilTitle: ['"Baloo Thambi 2"', '"Rozha One"', 'sans-serif']
+          },
+          colors: {
+            gold: {
+              300: '#FDE68A',
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+              700: '#B45309',
+              900: '#78350F'
+            }
+          },
+          keyframes: {
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            glowPulse: {
+              '0%, 100%': { opacity: 0.6, transform: 'scale(1)' },
+              '50%': { opacity: 1, transform: 'scale(1.05)' }
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' }
+            },
+            shake: {
+              '0%, 100%': { transform: 'translateX(0)' },
+              '20%, 60%': { transform: 'translateX(-6px)' },
+              '40%, 80%': { transform: 'translateX(6px)' }
+            },
+            fadeInUp: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' }
+            }
+          },
+          animation: {
+            floatSlow: 'floatSlow 5s ease-in-out infinite',
+            glowPulse: 'glowPulse 3s ease-in-out infinite',
+            shimmer: 'shimmer 4s linear infinite',
+            shake: 'shake 0.4s ease-in-out',
+            fadeInUp: 'fadeInUp 0.8s ease-out forwards'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Safe Area Insets for Android Displays */
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: #06070B;
+      color: #F1F5F9;
+      overflow-x: hidden;
+      min-height: 100dvh;
+      padding-left: var(--sal);
+      padding-right: var(--sar);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Custom Scrollbars */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FFF6D5 0%, #F6C865 35%, #E59819 70%, #FFF2AF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-slogan-gradient {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FBBF24 50%, #F43F5E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-glass {
+      background: rgba(13, 17, 28, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(245, 158, 11, 0.22);
+    }
+
+    .card-glass:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+      box-shadow: 0 12px 35px -10px rgba(245, 158, 11, 0.25);
+    }
+
+    /* Chapter Atmosphere Gradients */
+    .bg-chapter-1 {
+      background: radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.15), transparent 70%),
+        linear-gradient(180deg, #06070B 0%, #0F172A 50%, #090D16 100%);
+    }
+
+    .bg-chapter-2 {
+      background: radial-gradient(circle at 75% 30%, rgba(225, 29, 72, 0.18), transparent 60%),
+        linear-gradient(180deg, #090D16 0%, #1A0713 50%, #0C0610 100%);
+    }
+
+    .bg-chapter-3 {
+      background: radial-gradient(circle at 25% 40%, rgba(99, 102, 241, 0.2), transparent 65%),
+        linear-gradient(180deg, #0C0610 0%, #0D102A 50%, #060B18 100%);
+    }
+
+    .bg-chapter-4 {
+      background: radial-gradient(circle at 80% 50%, rgba(16, 185, 129, 0.18), transparent 65%),
+        linear-gradient(180deg, #060B18 0%, #041E19 50%, #051411 100%);
+    }
+
+    .bg-chapter-5 {
+      background: radial-gradient(circle at 50% 40%, rgba(245, 158, 11, 0.25), rgba(225, 29, 72, 0.12) 60%, transparent 80%),
+        linear-gradient(180deg, #051411 0%, #180D04 45%, #05060A 100%);
+    }
+
+    /* Envelope Opening 3D Transform */
+    .envelope-wrapper {
+      perspective: 1200px;
+    }
+
+    .envelope-card {
+      transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+    }
+
+    .envelope-opening {
+      transform: translateY(-80px) rotateX(-20deg) scale(1.05);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Washi tape accent */
+    .tape-accent {
+      background: rgba(254, 243, 199, 0.65);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Scroll progress bar */
+    #progress-bar {
+      transition: width 0.1s ease-out;
+    }
+
+    /* Floating action dock safe-area adaptation */
+    #quick-controls {
+      bottom: calc(1rem + var(--sab));
+      right: calc(1rem + var(--sar));
+    }
+
+    /* ========================================================= */
+    /* MASTER SCROLL ANIMATIONS SYSTEM                          */
+    /* ========================================================= */
+
+    /* Subtle floating animation for Scroll Down indicator */
+    @keyframes gentleFloatArrow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(6px); }
+    }
+    .animate-gentle-float {
+      animation: gentleFloatArrow 2.6s ease-in-out infinite;
+    }
+
+    /* Hero Independent Text Initial Entrance Animation */
+    /* 1. Small Top Surprise Label: Horizontal reveal */
+    #hero-label {
+      opacity: 0;
+      transform: translate3d(-25px, 0, 0);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+      will-change: opacity, transform;
+    }
+
+    /* Main ANBUMANI Title Reveal */
+    #hero-title {
+      opacity: 0;
+      transform: translate3d(0, 35px, 0) scale(0.96);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+      will-change: opacity, transform;
+    }
+
+    /* 2. Heading: "A Little Gift, A Lot of Memories." - Cinematic Text Reveal */
+    #hero-tagline {
+      opacity: 0;
+      transform: translate3d(0, 35px, 0);
+      filter: blur(8px);
+      transition: opacity 0.9s ease-out 0.4s, transform 0.9s ease-out 0.4s, filter 0.9s ease-out 0.4s;
+      will-change: opacity, transform, filter;
+    }
+
+    /* 3. Paragraph: Soft Line Reveal from slightly below */
+    #hero-desc .hero-desc-line {
+      display: inline-block;
+      opacity: 0;
+      transform: translate3d(0, 25px, 0);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      will-change: opacity, transform;
+    }
+    #hero-desc .hero-desc-line:nth-child(1) {
+      transition-delay: 0.65s;
+    }
+    #hero-desc .hero-desc-line:nth-child(2) {
+      transition-delay: 0.78s;
+    }
+
+    /* 4. "AnbuMani" Highlight: Subtle Glow & Sharp Reveal */
+    #hero-highlight-name {
+      display: inline-block;
+      opacity: 0;
+      transform: translate3d(0, 8px, 0);
+      filter: blur(3px);
+      transition: opacity 0.6s ease-out 0.92s, transform 0.6s ease-out 0.92s, filter 0.6s ease-out 0.92s, text-shadow 0.6s ease-out 0.92s;
+      will-change: opacity, transform, filter, text-shadow;
+    }
+
+    /* 5. Birthday Message: Gentle Scale + Fade Reveal */
+    #hero-bday-text {
+      display: inline-block;
+      opacity: 0;
+      transform: scale(0.92) translate3d(0, 15px, 0);
+      transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.1s, transform 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.1s;
+      will-change: opacity, transform;
+    }
+
+    /* 6. Heart Emoji: Scale 0.6 -> 1 with Subtle Single Pulse */
+    @keyframes subtleHeartSinglePulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.22); }
+      100% { transform: scale(1); }
+    }
+    #hero-bday-heart {
+      display: inline-block;
+      opacity: 0;
+      transform: scale(0.6);
+      transition: opacity 0.5s ease-out 1.35s, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.35s;
+      will-change: opacity, transform;
+    }
+
+    /* 7. Tamil Banner */
+    #hero-tamil-banner {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+      transition: opacity 0.85s ease-out 1.55s, transform 0.85s ease-out 1.55s;
+      will-change: opacity, transform;
+    }
+
+    /* Triggered state when hero is revealed */
+    .hero-revealed #hero-label {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    .hero-revealed #hero-title {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    .hero-revealed #hero-tagline {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      filter: blur(0px);
+    }
+    .hero-revealed #hero-desc .hero-desc-line {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    .hero-revealed #hero-highlight-name {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      filter: blur(0px);
+      text-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    }
+    .hero-revealed #hero-bday-text {
+      opacity: 1;
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+    .hero-revealed #hero-bday-heart {
+      opacity: 1;
+      transform: scale(1);
+      animation: subtleHeartSinglePulse 0.75s ease-out 1.85s 1 normal forwards;
+    }
+    .hero-revealed #hero-tamil-banner {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* Section-by-Section Custom Text Animation System */
+    /* 1. WHERE IT ALL BEGAN (Left-to-Right Reveal) */
+    .reveal-left-heading {
+      opacity: 0;
+      transform: translate3d(-50px, 0, 0);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-left-content {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+      will-change: opacity, transform;
+    }
+    .revealed .reveal-left-heading {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    .revealed .reveal-left-content {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* 2. ROOTS (Soft Fade + Scale) */
+    .reveal-soft-scale {
+      opacity: 0;
+      transform: scale3d(0.96, 0.96, 1);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .revealed .reveal-soft-scale {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+
+    /* 3. HOSTEL DAYS (Vertical Reveal) */
+    .reveal-vertical-1 {
+      opacity: 0;
+      transform: translate3d(0, 45px, 0);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-vertical-2 {
+      opacity: 0;
+      transform: translate3d(0, 45px, 0);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.16s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.16s;
+      will-change: opacity, transform;
+    }
+    .revealed .reveal-vertical-1,
+    .revealed .reveal-vertical-2 {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* 4. COMEDY REELS (Masked / Clip Reveal) */
+    .reveal-masked-clip {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+      clip-path: inset(0 0 100% 0);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), clip-path 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform, clip-path;
+    }
+    .revealed .reveal-masked-clip {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      clip-path: inset(0 0 0 0);
+    }
+
+    /* 5. TRUE FRIEND (Right-to-Left Reveal) */
+    .reveal-right-heading {
+      opacity: 0;
+      transform: translate3d(50px, 0, 0);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-right-content {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.16s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.16s;
+      will-change: opacity, transform;
+    }
+    .revealed .reveal-right-heading {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    .revealed .reveal-right-content {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* 6. OUR GIFT (Gentle Fade-Up + Scale) */
+    .reveal-fade-scale-up {
+      opacity: 0;
+      transform: translate3d(0, 35px, 0) scale3d(0.98, 0.98, 1);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .revealed .reveal-fade-scale-up {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    }
+
+    /* ========================================================= */
+    /* MOBILE-ONLY HERO / GIFT SCREEN RESPONSIVE (320px - 767px) */
+    /* DESKTOP (768px+) REMAINS COMPLETELY UNCHANGED            */
+    /* ========================================================= */
+    @media (max-width: 767px) {
+      /* Mobile Gateway Viewport Setup */
+      #locked-gateway {
+        width: 100% !important;
+        min-height: 100svh !important;
+        min-height: 100dvh !important;
+        padding: clamp(12px, 3.5vw, 20px) 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #05060A !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        box-sizing: border-box !important;
+      }
+
+      /* Main Centered Mobile Container (calc(100% - 32px), max-width 400px) */
+      #locked-gateway .envelope-wrapper {
+        width: calc(100% - 32px) !important;
+        max-width: 400px !important;
+        margin: auto !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Rounded Gold Border Main Content Card */
+      #locked-gateway #envelope-main {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: clamp(18px, 4.8vw, 24px) clamp(14px, 4.2vw, 20px) !important;
+        border-radius: clamp(20px, 5vw, 26px) !important;
+        border: 1.5px solid rgba(245, 158, 11, 0.45) !important;
+        background: linear-gradient(180deg, #181312 0%, #0D0E15 50%, #08090E 100%) !important;
+        box-shadow: 0 16px 45px -10px rgba(245, 158, 11, 0.3), 0 0 25px rgba(245, 158, 11, 0.12), inset 0 0 15px rgba(245, 158, 11, 0.05) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
+      }
+
+      /* 1. Gift Icon at Top */
+      #locked-gateway .gift-icon-box {
+        width: clamp(44px, 11.5vw, 50px) !important;
+        height: clamp(44px, 11.5vw, 50px) !important;
+        border-radius: 14px !important;
+        margin: 0 auto clamp(8px, 2.2vw, 12px) auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(244, 63, 94, 0.2) 100%) !important;
+        border: 1px solid rgba(251, 191, 36, 0.45) !important;
+        box-shadow: inset 0 0 10px rgba(245, 158, 11, 0.15), 0 4px 15px rgba(245, 158, 11, 0.2) !important;
+        flex-shrink: 0 !important;
+      }
+
+      #locked-gateway .gift-icon-box svg,
+      #locked-gateway .gift-icon-box i {
+        width: clamp(22px, 5.5vw, 25px) !important;
+        height: clamp(22px, 5.5vw, 25px) !important;
+      }
+
+      /* 2. "A LITTLE SURPRISE FROM YOUR FRIENDS" Label */
+      #locked-gateway .surprise-label {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 3.5px 12px !important;
+        border-radius: 9999px !important;
+        background: rgba(245, 158, 11, 0.12) !important;
+        border: 1px solid rgba(245, 158, 11, 0.38) !important;
+        color: #FCD34D !important;
+        font-family: monospace !important;
+        font-size: clamp(8.5px, 2.4vw, 10px) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.12em !important;
+        margin: 0 auto clamp(6px, 1.8vw, 10px) auto !important;
+        max-width: 100% !important;
+        white-space: nowrap !important;
+        box-shadow: 0 0 12px rgba(245, 158, 11, 0.15) !important;
+      }
+
+      /* 3. ANBUMANI Title (Responsive clamp, single-line, centered, no wrap) */
+      #locked-gateway .hero-mobile-title {
+        font-family: "Cinzel Decorative", serif !important;
+        font-size: clamp(1.65rem, 6.8vw, 2.25rem) !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        line-height: 1.15 !important;
+        margin: 0 auto 3px auto !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        text-shadow: 0 4px 18px rgba(245, 158, 11, 0.35) !important;
+      }
+
+      /* 4. Tagline: "A Little Gift, A Lot of Memories." */
+      #locked-gateway .hero-mobile-tagline {
+        font-family: serif !important;
+        font-style: italic !important;
+        font-size: clamp(10.5px, 3.1vw, 12.5px) !important;
+        color: rgba(253, 230, 138, 0.92) !important;
+        margin: 0 auto clamp(8px, 2.5vw, 14px) auto !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        max-width: 100% !important;
+      }
+
+      /* 5. Central Seal / 22 Area */
+      #locked-gateway .seal-card-box {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: clamp(6px, 1.8vw, 10px) 0 clamp(10px, 2.8vw, 14px) 0 !important;
+        padding: clamp(10px, 2.5vw, 14px) clamp(10px, 3vw, 14px) clamp(8px, 2vw, 10px) clamp(10px, 3vw, 14px) !important;
+        border-radius: 16px !important;
+        background: rgba(0, 0, 0, 0.65) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6), 0 0 15px rgba(245, 158, 11, 0.08) !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Seal Instruction Badge */
+      #locked-gateway .seal-badge {
+        position: absolute !important;
+        top: -9.5px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        padding: 2px 10px !important;
+        border-radius: 9999px !important;
+        background: rgba(26, 13, 0, 0.95) !important;
+        border: 1px solid rgba(245, 158, 11, 0.45) !important;
+        color: #FCD34D !important;
+        font-family: monospace !important;
+        font-size: clamp(8px, 2.2vw, 9.5px) !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        box-shadow: 0 0 12px rgba(245, 158, 11, 0.3) !important;
+      }
+
+      /* Flap & Glowing Seal Circle */
+      #locked-gateway .seal-flap-container {
+        height: clamp(64px, 16vw, 76px) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        margin-top: 4px !important;
+        width: 100% !important;
+      }
+
+      #locked-gateway .seal-button-circle {
+        width: clamp(56px, 14.5vw, 66px) !important;
+        height: clamp(56px, 14.5vw, 66px) !important;
+        border-radius: 9999px !important;
+        background: linear-gradient(135deg, #D97706 0%, #F59E0B 50%, #FDE68A 100%) !important;
+        padding: 2.5px !important;
+        box-shadow: 0 0 26px rgba(245, 158, 11, 0.6) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: transform 0.25s ease !important;
+      }
+
+      #locked-gateway .seal-button-inner {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 9999px !important;
+        background: #1A0D00 !important;
+        border: 1px solid rgba(253, 230, 138, 0.45) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #FCD34D !important;
+      }
+
+      #locked-gateway .seal-number {
+        font-family: "Cinzel", serif !important;
+        font-size: clamp(17px, 4.4vw, 20px) !important;
+        font-weight: 800 !important;
+        line-height: 1 !important;
+      }
+
+      #locked-gateway .seal-word {
+        font-size: clamp(7px, 1.8vw, 8px) !important;
+        font-family: monospace !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.08em !important;
+        line-height: 1 !important;
+        margin-top: 1px !important;
+      }
+
+      /* Hostel Memory Text */
+      #locked-gateway .hostel-memory-quote {
+        font-family: serif !important;
+        font-style: italic !important;
+        font-size: clamp(9.5px, 2.7vw, 11px) !important;
+        color: rgba(253, 230, 138, 0.85) !important;
+        margin-top: 5px !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
+      }
+
+      /* 6. Form & Passcode Input */
+      #locked-gateway #pin-form {
+        width: 100% !important;
+        margin-top: 0 !important;
+      }
+
+      #locked-gateway .passcode-label {
+        display: block !important;
+        font-family: monospace !important;
+        font-size: clamp(9.5px, 2.6vw, 10.5px) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.12em !important;
+        color: rgba(252, 211, 77, 0.88) !important;
+        margin-bottom: 6px !important;
+        text-align: center !important;
+      }
+
+      #locked-gateway #pin-input {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: clamp(44px, 11vw, 48px) !important;
+        text-align: center !important;
+        letter-spacing: clamp(0.4em, 1.4vw, 0.55em) !important;
+        font-family: monospace !important;
+        font-size: clamp(18px, 4.8vw, 22px) !important;
+        border-radius: 12px !important;
+        background: rgba(0, 0, 0, 0.82) !important;
+        border: 1px solid rgba(245, 158, 11, 0.45) !important;
+        color: #FCD34D !important;
+        box-sizing: border-box !important;
+        margin-bottom: clamp(8px, 2.2vw, 10px) !important;
+        padding: 0 12px !important;
+      }
+
+      #locked-gateway #pin-input::placeholder {
+        color: #64748B !important;
+        letter-spacing: clamp(0.4em, 1.4vw, 0.55em) !important;
+      }
+
+      /* 7. Large Orange/Gold Unlock Button */
+      #locked-gateway .unlock-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: clamp(50px, 12.5vw, 54px) !important;
+        min-height: 48px !important;
+        border-radius: 14px !important;
+        background: linear-gradient(90deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%) !important;
+        color: #000000 !important;
+        font-weight: 800 !important;
+        font-size: clamp(11px, 2.9vw, 12.5px) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.12em !important;
+        box-shadow: 0 8px 24px -4px rgba(245, 158, 11, 0.45) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        cursor: pointer !important;
+      }
+
+      #locked-gateway .unlock-btn:hover {
+        filter: brightness(1.08) !important;
+      }
+
+      #locked-gateway .unlock-btn:active {
+        transform: scale(0.985) !important;
+      }
+    }
+
+    /* Extra Narrow Screen Optimization (320px - 360px) */
+    @media (max-width: 360px) {
+      #locked-gateway {
+        padding: 10px 10px !important;
+      }
+      #locked-gateway .envelope-wrapper {
+        width: calc(100% - 16px) !important;
+      }
+      #locked-gateway #envelope-main {
+        padding: 16px 12px !important;
+        border-radius: 18px !important;
+      }
+      #locked-gateway .gift-icon-box {
+        width: 40px !important;
+        height: 40px !important;
+        margin-bottom: 6px !important;
+      }
+      #locked-gateway .hero-mobile-title {
+        font-size: 1.5rem !important;
+      }
+      #locked-gateway .seal-card-box {
+        padding: 8px 8px 6px 8px !important;
+        margin: 5px 0 8px 0 !important;
+      }
+      #locked-gateway .seal-flap-container {
+        height: 58px !important;
+      }
+      #locked-gateway .seal-button-circle {
+        width: 52px !important;
+        height: 52px !important;
+      }
+      #locked-gateway .seal-number {
+        font-size: 16px !important;
+      }
+      #locked-gateway #pin-input {
+        height: 42px !important;
+        font-size: 17px !important;
+        margin-bottom: 7px !important;
+      }
+      #locked-gateway .unlock-btn {
+        height: 48px !important;
+        font-size: 10px !important;
+        letter-spacing: 0.08em !important;
+      }
+    }
+
+    /* Short Viewport Screen Optimization (Height <= 680px) */
+    @media (max-width: 767px) and (max-height: 680px) {
+      #locked-gateway {
+        padding: 8px 12px !important;
+      }
+      #locked-gateway #envelope-main {
+        padding: 12px 14px !important;
+      }
+      #locked-gateway .gift-icon-box {
+        width: 36px !important;
+        height: 36px !important;
+        margin-bottom: 5px !important;
+      }
+      #locked-gateway .surprise-label {
+        margin-bottom: 5px !important;
+        padding: 2.5px 8px !important;
+      }
+      #locked-gateway .hero-mobile-title {
+        font-size: 1.55rem !important;
+        margin-bottom: 2px !important;
+      }
+      #locked-gateway .hero-mobile-tagline {
+        margin-bottom: 6px !important;
+      }
+      #locked-gateway .seal-card-box {
+        margin: 5px 0 7px 0 !important;
+        padding: 7px 10px 5px 10px !important;
+      }
+      #locked-gateway .seal-flap-container {
+        height: 54px !important;
+      }
+      #locked-gateway .seal-button-circle {
+        width: 48px !important;
+        height: 48px !important;
+      }
+      #locked-gateway #pin-input {
+        height: 40px !important;
+        margin-bottom: 6px !important;
+      }
+      #locked-gateway .unlock-btn {
+        height: 46px !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="selection:bg-amber-500 selection:text-black">
+
+  <!-- Floating Canvas Particles -->
+  <canvas id="canvas-particles" class="fixed inset-0 pointer-events-none z-10"></canvas>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="fixed top-0 left-0 right-0 h-1 z-50 bg-black/50">
+    <div id="progress-bar"
+      class="h-full w-0 bg-gradient-to-r from-amber-400 via-rose-500 to-amber-300 shadow-[0_0_12px_#F59E0B]"></div>
+  </div>
+
+  <!-- Ambient Audio & Confetti Floating Island -->
+  <div id="quick-controls" class="fixed z-40 hidden flex-col gap-2.5">
+    <button onclick="launchBirthdayConfetti()"
+      class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-amber-400 text-black flex items-center justify-center shadow-xl shadow-amber-500/40 hover:scale-110 active:scale-95 transition"
+      title="Cheer for AnbuMani!" aria-label="Celebrate">
+      <i data-lucide="sparkles" class="w-6 h-6"></i>
+    </button>
+    <button id="audio-toggle-btn" onclick="toggleAmbientMusic()"
+      class="w-12 h-12 rounded-full bg-slate-900/90 border border-amber-500/40 text-amber-400 flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition"
+      title="Nostalgic Soundtrack" aria-label="Toggle Music">
+      <i id="audio-toggle-icon" data-lucide="music" class="w-5 h-5"></i>
+    </button>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- 1. OPENING SCENE: THE SURPRISE GIFT ENVELOPE               -->
+  <!-- ========================================================= -->
+  <div id="locked-gateway"
+    class="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 bg-[#05060A]/95 backdrop-blur-2xl transition-all duration-1000 overflow-y-auto min-h-[100dvh]">
+
+    <div class="envelope-wrapper max-w-md w-full my-auto py-4">
+      <!-- Outer Card Presentation -->
+      <div id="envelope-main"
+        class="envelope-card relative rounded-3xl p-5 xs:p-6 sm:p-9 border border-amber-500/30 bg-gradient-to-b from-[#181312] via-[#0D0E15] to-[#08090E] shadow-[0_20px_60px_-15px_rgba(245,158,11,0.3)] text-center">
+
+        <!-- Top Gift / Heart Emblem -->
+        <div
+          class="gift-icon-box w-14 h-14 sm:w-16 sm:h-16 rounded-2xl mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-amber-400/20 to-rose-500/20 border border-amber-400/40 flex items-center justify-center text-amber-300 shadow-inner">
+          <i data-lucide="gift" class="w-7 h-7 sm:w-8 sm:h-8 animate-pulse text-amber-400"></i>
+        </div>
+
+        <!-- Small Label -->
+        <div
+          class="surprise-label inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[10px] xs:text-xs font-mono uppercase tracking-widest mb-2.5">
+          <span>A LITTLE SURPRISE FROM YOUR FRIENDS</span>
+        </div>
+
+        <h1 class="hero-mobile-title font-cinzelDeco text-2xl xs:text-3xl font-bold tracking-wider text-gold-gradient mb-1">
+          ANBUMANI
+        </h1>
+        <p class="hero-mobile-tagline text-[11px] xs:text-xs text-amber-200/90 font-serif italic mb-4 sm:mb-6">
+          “A Little Gift, A Lot of Memories.”
+        </p>
+
+        <!-- The Closed Envelope Visual with Glowing Wax Seal -->
+        <div
+          class="seal-card-box relative my-4 sm:my-6 p-4 xs:p-5 rounded-2xl bg-black/60 border border-white/10 shadow-inner cursor-pointer group"
+          onclick="triggerPinPrompt()">
+          <div
+            class="seal-badge absolute -top-3 left-1/2 -translate-x-1/2 px-3.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[9px] xs:text-[10px] font-mono tracking-widest uppercase border border-amber-400/30 whitespace-nowrap">
+            TAP MAX SEAL TO OPEN YOUR GIFT
+          </div>
+
+          <!-- Decorative Envelope Flaps -->
+          <div class="seal-flap-container h-24 sm:h-28 flex items-center justify-center relative">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-amber-900/25 to-rose-950/20 rounded-xl border border-amber-500/20">
+            </div>
+
+            <!-- Glowing Wax Seal Button -->
+            <div
+              class="seal-button-circle w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-amber-600 via-amber-500 to-amber-300 p-1 shadow-[0_0_30px_rgba(245,158,11,0.6)] group-hover:scale-110 active:scale-95 transition-transform duration-300 flex items-center justify-center z-10 animate-glowPulse">
+              <div
+                class="seal-button-inner w-full h-full rounded-full bg-[#1A0D00] border border-amber-300/40 flex flex-col items-center justify-center text-amber-300">
+                <span class="seal-number font-cinzel text-lg xs:text-xl font-extrabold">22</span>
+                <span class="seal-word text-[8px] xs:text-[9px] uppercase font-mono tracking-tighter">Seal</span>
+              </div>
+            </div>
+          </div>
+          <p
+            class="hostel-memory-quote text-[11px] xs:text-xs text-amber-200/80 font-serif italic mt-2.5 group-hover:text-amber-300 transition">
+            From our hostel corridors to this special day...
+          </p>
+        </div>
+
+        <!-- PIN Input Form -->
+        <form id="pin-form" onsubmit="verifyPin(event)" class="space-y-3">
+          <div class="relative">
+            <label for="pin-input"
+              class="passcode-label block text-[11px] xs:text-xs text-amber-300/80 mb-2 font-mono uppercase tracking-wider text-center">
+              Enter Secret Passcode to Unlock
+            </label>
+            <input id="pin-input" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
+              placeholder="••••"
+              class="w-full text-center tracking-[0.4em] xs:tracking-[0.6em] font-mono text-xl xs:text-2xl py-2.5 xs:py-3 rounded-xl bg-black/75 border border-amber-500/40 text-amber-300 placeholder:text-slate-600 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-500/30 transition"
+              required />
+          </div>
+
+          <button type="submit"
+            class="unlock-btn w-full py-3 xs:py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-extrabold text-[11px] xs:text-xs uppercase tracking-widest shadow-lg shadow-amber-500/30 hover:brightness-110 active:scale-[0.98] transition flex items-center justify-center gap-2">
+            <i data-lucide="unlock" class="w-4 h-4"></i>
+            <span>Open Our Surprise 🎁</span>
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- CINEMATIC MEMORY INTERLUDE SEQUENCE (Revealed on Unlock)   -->
+  <!-- ========================================================= -->
+  <div id="cinematic-interlude"
+    class="fixed inset-0 z-50 bg-[#06070B] flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none transition-opacity duration-1000">
+
+    <!-- Skip button for impatient friend -->
+    <button onclick="skipCinematic()"
+      class="absolute top-6 right-6 px-3.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 text-xs font-mono tracking-wider transition">
+      Skip to Surprise →
+    </button>
+
+    <div class="max-w-xl mx-auto space-y-6">
+      <!-- Animated Line Display -->
+      <div id="cinematic-text-box" class="min-h-[140px] flex items-center justify-center">
+        <p id="cinematic-line"
+          class="font-serif italic text-2xl xs:text-3xl sm:text-4xl text-amber-200 transition-all duration-700 transform opacity-0 translate-y-4">
+          <!-- Text dynamically injected -->
+        </p>
+      </div>
+
+      <!-- Progress indicator dots -->
+      <div class="flex items-center justify-center gap-2 pt-4">
+        <span id="dot-0" class="w-2 h-2 rounded-full bg-amber-400/20 transition-all duration-300"></span>
+        <span id="dot-1" class="w-2 h-2 rounded-full bg-amber-400/20 transition-all duration-300"></span>
+        <span id="dot-2" class="w-2 h-2 rounded-full bg-amber-400/20 transition-all duration-300"></span>
+        <span id="dot-3" class="w-2 h-2 rounded-full bg-amber-400/20 transition-all duration-300"></span>
+        <span id="dot-4" class="w-2 h-2 rounded-full bg-amber-400/20 transition-all duration-300"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- 2. MAIN STORYLINE EXPERIENCE                               -->
+  <!-- ========================================================= -->
+  <div id="main-story" class="opacity-0 transition-opacity duration-1000">
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-[#06070B]/90 backdrop-blur-md border-b border-amber-500/15 pt-[var(--sat)]">
+      <div class="max-w-7xl mx-auto px-3.5 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between">
+
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <div
+            class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 p-[1.5px] shadow-md shadow-amber-500/25 shrink-0">
+            <div
+              class="w-full h-full bg-[#07090E] rounded-[10px] flex items-center justify-center font-cinzel font-bold text-amber-300 text-xs">
+              22
+            </div>
+          </div>
+          <div>
+            <span
+              class="font-cinzelDeco text-sm sm:text-base font-bold text-white tracking-widest block leading-none">ANBUMANI</span>
+            <span class="text-[9px] sm:text-[10px] uppercase font-mono tracking-widest text-amber-400/90 block mt-0.5">A
+              Little Gift, A Lot of Memories</span>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest text-slate-300 font-mono">
+          <a href="#prologue" class="hover:text-amber-400 transition">Genesis</a>
+          <a href="#school" class="hover:text-amber-400 transition">Roots</a>
+          <a href="#college" class="hover:text-amber-400 transition">Hostel Days</a>
+          <a href="#comedy-vault" class="hover:text-amber-400 transition flex items-center gap-1">
+            <span>Comedy Reels</span>
+            <i data-lucide="video" class="w-3.5 h-3.5 text-rose-400"></i>
+          </a>
+          <a href="#character" class="hover:text-amber-400 transition">True Friend</a>
+          <a href="#level22" class="hover:text-amber-400 transition">Our Gift 🎁</a>
+        </nav>
+
+        <!-- Salute / Wish Button -->
+        <div class="flex items-center gap-2">
+          <button onclick="launchBirthdayConfetti()"
+            class="px-3 xs:px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 text-black font-bold text-[10px] xs:text-xs uppercase tracking-wider shadow-md hover:scale-105 active:scale-95 transition flex items-center gap-1.5">
+            <i data-lucide="heart" class="w-3.5 h-3.5 fill-black"></i>
+            <span class="hidden xs:inline">Cheer AnbuMani ❤️</span>
+            <span class="xs:hidden">Cheer ❤️</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Horizontal Chapter Navigation Bar -->
+      <div
+        class="md:hidden border-t border-amber-500/10 px-3 py-1.5 overflow-x-auto no-scrollbar flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider bg-black/40">
+        <a href="#prologue"
+          class="shrink-0 px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/25 active:bg-amber-400 active:text-black transition">I.
+          Genesis</a>
+        <a href="#school"
+          class="shrink-0 px-3 py-1 rounded-full bg-rose-500/10 text-rose-300 border border-rose-500/25 active:bg-rose-400 active:text-black transition">II.
+          Roots</a>
+        <a href="#college"
+          class="shrink-0 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/25 active:bg-indigo-400 active:text-black transition">III.
+          Hostel Days</a>
+        <a href="#comedy-vault"
+          class="shrink-0 px-3 py-1 rounded-full bg-rose-500/20 text-rose-200 border border-rose-400/40 active:bg-rose-400 active:text-black transition">🎬
+          Comedy</a>
+        <a href="#character"
+          class="shrink-0 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/25 active:bg-emerald-400 active:text-black transition">IV.
+          True Friend</a>
+        <a href="#level22"
+          class="shrink-0 px-3 py-1 rounded-full bg-amber-500/20 text-amber-200 border border-amber-400/40 active:bg-amber-400 active:text-black transition">Level
+          22 🎁</a>
+      </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- CINEMATIC SCROLL-DRIVEN HERO SECTION (Single Cutout Image)  -->
+    <!-- ========================================================= -->
+    <!-- ========================================================= -->
+    <!-- CINEMATIC SCROLL-DRIVEN HERO SECTION (Pinned Parallax)     -->
+    <!-- ========================================================= -->
+    <div id="hero-scroll-track" class="relative w-full bg-[#06070B]" style="height: 185vh;">
+
+      <!-- Pinned Hero Viewport (stays visually pinned while animation progresses) -->
+      <section id="hero-section"
+        class="sticky top-0 h-[100svh] w-full flex flex-col justify-between items-center text-center px-3 sm:px-6 pt-3 sm:pt-5 pb-3 sm:pb-6 overflow-hidden select-none bg-[#06070B] z-20">
+
+        <!-- 1. Atmospheric Nature/Mountain Background Layer (Slow Parallax) -->
+        <div id="hero-bg-layer" class="absolute inset-0 pointer-events-none overflow-hidden z-0 will-change-transform">
+          <img src="images/anbu_forest_hero.jpg" alt="Nature Golden Sunset Background"
+            id="hero-bg-img"
+            class="w-full h-full object-cover object-center scale-105 will-change-transform filter brightness-[0.85] contrast-[1.08]" />
+          <!-- Dark luxury vignettes to keep black/gold aesthetic seamless and text crisp -->
+          <div class="absolute inset-0 bg-gradient-to-b from-[#06070B]/85 via-transparent to-[#06070B]"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#06070B_90%)]"></div>
+        </div>
+
+        <!-- 2. Subtle Ambient Golden Radial Glow behind the silhouette -->
+        <div id="hero-ambient-glow"
+          class="absolute inset-0 pointer-events-none z-5 transition-opacity duration-500 opacity-60 flex items-center justify-center">
+          <div
+            class="w-[360px] sm:w-[600px] md:w-[760px] h-[360px] sm:h-[600px] md:h-[760px] rounded-full bg-[radial-gradient(circle,rgba(245,158,11,0.22)_0%,rgba(217,119,6,0.10)_45%,transparent_70%)] filter blur-3xl transform will-change-transform">
+          </div>
+        </div>
+
+        <!-- 3. Foreground Person Layer (Faster Parallax) -->
+        <div id="hero-single-image-wrap"
+          class="absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center justify-end pointer-events-none will-change-transform">
+        </div>
+
+        <!-- 4. HERO CONTENT (Independent Smooth Text Reveals & Scroll-Out) -->
+        <div id="hero-text-content"
+          class="relative z-20 flex flex-col justify-center items-center text-center max-w-4xl w-full mx-auto will-change-transform pt-1 sm:pt-3">
+
+          <!-- Small Label -->
+          <div id="hero-label"
+            class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/40 border border-amber-400/40 text-amber-300 text-[9px] xs:text-[10px] sm:text-xs font-mono uppercase tracking-[0.16em] sm:tracking-[0.22em] mb-2 sm:mb-3 shadow-[0_0_20px_rgba(245,158,11,0.2)] backdrop-blur-md">
+            <span>🎁 A LITTLE SURPRISE FROM YOUR FRIENDS</span>
+          </div>
+
+          <!-- Hero Title -->
+          <h1 id="hero-title"
+            class="font-cinzelDeco text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-1 sm:mb-2 text-gold-gradient select-none drop-shadow-[0_12px_35px_rgba(245,158,11,0.35)] break-words max-w-full leading-tight">
+            ANBUMANI
+          </h1>
+
+          <!-- Main Slogan & Supporting Text Elements (Card visual completely removed, text directly over nature background) -->
+          <div id="hero-tagline-container"
+            class="my-1 sm:my-2 max-w-3xl w-full px-3.5 sm:px-8 flex flex-col items-center text-center">
+
+            <!-- Main Slogan Heading -->
+            <h2 id="hero-tagline"
+              class="font-serif italic text-lg xs:text-xl sm:text-3xl text-amber-300 font-semibold tracking-wide leading-snug drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+              “A Little Gift, A Lot of Memories.”
+            </h2>
+
+            <!-- Sub-slogan / Supporting text with soft line reveal -->
+            <p id="hero-desc"
+              class="text-[11px] xs:text-xs sm:text-sm text-slate-200 mt-1.5 sm:mt-2.5 leading-relaxed font-sans max-w-2xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <span class="hero-desc-line block sm:inline">From our college days, hostel nights, endless laughs and unforgettable moments —</span>
+              <span class="hero-desc-line block sm:inline">we put together a little surprise just for you, <span id="hero-highlight-name" class="font-semibold text-amber-300">AnbuMani</span>.</span>
+            </p>
+
+            <!-- Final personal cheer: Birthday text + heart (each with its own animation) -->
+            <div id="hero-bday-msg" class="mt-2 sm:mt-3 flex items-center justify-center">
+              <span id="hero-bday-text" class="font-tamilTitle text-sm xs:text-base sm:text-lg text-rose-300 font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                Happy Birthday, Machi!
+              </span>
+              <span id="hero-bday-heart" class="inline-block ml-1.5 text-base sm:text-lg filter drop-shadow-[0_2px_6px_rgba(244,63,94,0.6)] select-none">💖</span>
+            </div>
+
+          </div>
+
+          <!-- Tamil Warm Quote Banner (Gleaming gold border & dark glass) -->
+          <div id="hero-tamil-banner"
+            class="mt-1 sm:mt-2 max-w-xl px-4 py-1.5 sm:py-2 rounded-xl bg-black/60 border border-amber-500/40 backdrop-blur-md shadow-[0_0_25px_rgba(245,158,11,0.2)]">
+            <p class="font-tamilTitle text-[11px] xs:text-xs sm:text-sm text-amber-300 font-semibold leading-relaxed">
+              “கல்லூரி வாழ்க்கை... ஹாஸ்டல் அரட்டைகள்... என்றும் மறக்க முடியாத நம் நட்பு!”
+            </p>
+          </div>
+
+        </div>
+
+        <!-- 5. Scroll Down Indicator (Circular with trailing dot, matching screenshot) -->
+        <div id="hero-scroll-cue"
+          class="absolute bottom-5 right-5 sm:bottom-8 sm:right-8 z-30 flex flex-col items-center gap-1.5 transition-opacity duration-300 pointer-events-none select-none">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-amber-400/50 flex items-center justify-center text-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.25)] animate-gentle-float">
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+          </div>
+          <span class="text-[8px] sm:text-[9px] font-mono tracking-widest text-amber-300/80 uppercase">Scroll Down</span>
+          <div class="w-[1.5px] h-3.5 bg-gradient-to-b from-amber-400/80 to-transparent"></div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- CHAPTER 1: THE GENESIS (2005)                             -->
+    <!-- ========================================================= -->
+    <section id="prologue"
+      class="bg-chapter-1 py-14 xs:py-18 sm:py-24 md:py-28 px-3.5 sm:px-6 relative border-t border-amber-500/15">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Chapter Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-14 gap-3 reveal-left-heading">
+          <div>
+            <div
+              class="flex items-center gap-2 text-amber-400 font-mono text-[10px] xs:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1.5">
+              <span class="w-6 sm:w-8 h-[2px] bg-amber-400"></span>
+              <span>Chapter I • Year 2005</span>
+            </div>
+            <h2 class="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white">Where It All Began
+            </h2>
+          </div>
+          <div class="flex items-center sm:block gap-2 sm:text-right">
+            <span
+              class="font-cinzelDeco text-3xl sm:text-5xl md:text-6xl font-black text-amber-500/30 sm:text-amber-500/20 block leading-none">2005</span>
+            <span class="text-[10px] xs:text-xs font-mono uppercase tracking-wider text-amber-300/80 block">The
+              Inception of Machan</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-center reveal-left-content">
+
+          <!-- Image with Touch Photo Replacement -->
+          <div class="lg:col-span-6">
+            <div class="card-glass p-3 xs:p-4 rounded-2xl sm:rounded-3xl relative group">
+              <div class="tape-accent absolute -top-2.5 left-6 sm:left-10 w-20 sm:w-24 h-5 sm:h-6 -rotate-3 z-20"></div>
+              <div class="aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden relative shadow-2xl bg-black">
+                <img id="img-chapter-1" src="images/anbu_hostel_pose.jpg" alt="AnbuMani hostel swagger"
+                  class="w-full h-full object-cover object-[50%_15%] group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+
+                <label for="upload-1"
+                  class="absolute bottom-2.5 right-2.5 xs:bottom-3 xs:right-3 px-3 py-1.5 rounded-full bg-black/80 hover:bg-amber-500 active:bg-amber-400 text-white hover:text-black active:text-black border border-white/20 text-[10px] xs:text-xs font-mono tracking-wider cursor-pointer flex items-center gap-1.5 shadow-lg active:scale-95 transition">
+                  <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                  <span>Change Photo</span>
+                </label>
+                <input id="upload-1" type="file" accept="image/*" class="hidden"
+                  onchange="replacePhoto(event, 'img-chapter-1')" />
+              </div>  
+            </div>
+          </div>
+
+          <!-- Story Text & Slogans -->
+          <div class="lg:col-span-6 space-y-4 sm:space-y-6">
+            <div class="p-3.5 xs:p-4 rounded-2xl bg-black/50 border-l-4 border-amber-400">
+              <p class="font-tamilTitle text-base xs:text-lg sm:text-xl text-amber-300 font-semibold leading-relaxed">
+                "எங்கள் நண்பன் உலகில் காலடி எடுத்து வைத்த பொன்னான வருடம்!"
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-xs xs:text-sm sm:text-base leading-relaxed font-sans">
+              Long before our college days and hostel corridors echoed with our inside jokes, AnbuMani's story began in
+              the year 2005. Right from his childhood, he carried an infectious warm smile and a calm, protective nature
+              that naturally drew people closer to him.
+            </p>
+
+            <p class="text-slate-300 text-xs xs:text-sm sm:text-base leading-relaxed font-sans">
+              It takes years to build character, but looking at AnbuMani today, it's clear he was always destined to be
+              the humble, big-hearted soul that we all cherish as a true brother.
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 sm:gap-4 pt-1 sm:pt-2">
+              <div class="p-3 xs:p-4 rounded-xl sm:rounded-2xl bg-black/50 border border-white/10">
+                <span class="font-cinzel text-xl sm:text-2xl font-bold text-amber-400 block">2005</span>
+                <span class="text-[10px] xs:text-xs uppercase text-slate-400 font-mono">The Genesis Year</span>
+              </div>
+              <div class="p-3 xs:p-4 rounded-xl sm:rounded-2xl bg-black/50 border border-white/10">
+                <span class="font-cinzel text-xl sm:text-2xl font-bold text-amber-400 block">Pure</span>
+                <span class="text-[10px] xs:text-xs uppercase text-slate-400 font-mono">Heart of Gold</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- CHAPTER 2: THE ROOTS & BROTHERHOOD                        -->
+    <!-- ========================================================= -->
+    <section id="school"
+      class="bg-chapter-2 py-14 xs:py-18 sm:py-24 md:py-28 px-3.5 sm:px-6 relative border-t border-rose-500/15">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Chapter Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-14 gap-3 reveal-soft-scale">
+          <div>
+            <div
+              class="flex items-center gap-2 text-rose-400 font-mono text-[10px] xs:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1.5">
+              <span class="w-6 sm:w-8 h-[2px] bg-rose-400"></span>
+              <span>Chapter II • Growing Up & The Roots</span>
+            </div>
+            <h2 class="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white">Made of Memories
+            </h2>
+          </div>
+          <div class="flex items-center sm:block gap-2 sm:text-right">
+            <span
+              class="font-cinzelDeco text-3xl sm:text-5xl md:text-6xl font-black text-rose-500/30 sm:text-rose-500/20 block leading-none">NO
+              FEAR</span>
+            <span class="text-[10px] xs:text-xs font-mono uppercase tracking-wider text-rose-300/80 block">Unfiltered
+              Loyalty</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-center reveal-soft-scale" style="transition-delay: 0.15s;">
+
+          <!-- Image -->
+          <div class="lg:col-span-6 order-1 lg:order-2">
+            <div class="card-glass p-3 xs:p-4 rounded-2xl sm:rounded-3xl relative group border-rose-500/30">
+              <div class="tape-accent absolute -top-2.5 right-6 sm:right-10 w-20 sm:w-24 h-5 sm:h-6 rotate-2 z-20">
+              </div>
+              <div class="aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden relative shadow-2xl bg-black">
+                <img id="img-chapter-2" src="images/brotherhood_love.jpg" alt="Brotherhood love"
+                  class="w-full h-full object-cover object-[50%_20%] group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+
+                <label for="upload-2"
+                  class="absolute bottom-2.5 right-2.5 xs:bottom-3 xs:right-3 px-3 py-1.5 rounded-full bg-black/80 hover:bg-rose-500 active:bg-rose-400 text-white hover:text-black active:text-black border border-white/20 text-[10px] xs:text-xs font-mono tracking-wider cursor-pointer flex items-center gap-1.5 shadow-lg active:scale-95 transition">
+                  <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                  <span>Change Photo</span>
+                </label>
+                <input id="upload-2" type="file" accept="image/*" class="hidden"
+                  onchange="replacePhoto(event, 'img-chapter-2')" />
+              </div>
+              <div class="mt-2.5 sm:mt-3 text-center">
+                <p class="font-serif italic text-xs text-rose-200">“Made of Memories, Shared with Love ❤️”</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Text & Slogans -->
+          <div class="lg:col-span-6 space-y-4 sm:space-y-6 order-2 lg:order-1">
+            <div class="p-3.5 xs:p-4 rounded-2xl bg-black/50 border-l-4 border-rose-500">
+              <p class="font-tamilTitle text-base xs:text-lg sm:text-xl text-rose-300 font-semibold leading-relaxed">
+                "நட்புக்கு இலக்கணம் எழுதினால்... அதில் முதல் வரி அன்புமணி!"
+              </p>
+              <p class="text-[10px] xs:text-xs font-mono uppercase tracking-wider text-slate-400 mt-1">
+                "Some memories deserve to be relived."
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-xs xs:text-sm sm:text-base leading-relaxed font-sans">
+              From schoolyard desks to bicycle races and sharing lunch boxes, AnbuMani was always the heart of his
+              friends' circles. He never believed in holding back when it came to standing by people who mattered.
+            </p>
+
+            <p class="text-slate-300 text-xs xs:text-sm sm:text-base leading-relaxed font-sans">
+              Whenever any disagreement or misunderstanding arose, he was the peace-maker who united everyone with a
+              single joke and a hearty laugh. Those roots of pure friendship are what make him the brother he is today.
+            </p>
+
+            <div
+              class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-rose-950/30 border border-rose-500/30 text-xs font-serif italic text-rose-200">
+              "Because the best gifts aren't bought in stores — they are the memories we forge together."
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- CHAPTER 3: COLLEGE DAYS & HOSTEL NIGHTS                   -->
+    <!-- ========================================================= -->
+    <section id="college"
+      class="bg-chapter-3 py-14 xs:py-18 sm:py-24 md:py-28 px-3.5 sm:px-6 relative border-t border-indigo-500/15">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Chapter Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-14 gap-3 reveal-vertical-1">
+          <div>
+            <div
+              class="flex items-center gap-2 text-indigo-400 font-mono text-[10px] xs:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1.5">
+              <span class="w-6 sm:w-8 h-[2px] bg-indigo-400"></span>
+              <span>Chapter III • College, Hostel & Chai</span>
+            </div>
+            <h2 class="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white">Hostel Nights & 3
+              AM Chai</h2>
+          </div>
+          <div class="flex items-center sm:block gap-2 sm:text-right">
+            <span
+              class="font-cinzelDeco text-3xl sm:text-5xl md:text-6xl font-black text-indigo-500/30 sm:text-indigo-500/20 block leading-none">HOSTEL</span>
+            <span class="text-[10px] xs:text-xs font-mono uppercase tracking-wider text-indigo-300/80 block">From
+              Roommates to Family</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-center reveal-vertical-2">
+
+          <!-- Image -->
+          <div class="lg:col-span-6">
+            <div class="card-glass p-3 xs:p-4 rounded-2xl sm:rounded-3xl relative group border-indigo-500/30">
+              <div class="tape-accent absolute -top-2.5 left-6 sm:left-10 w-20 sm:w-24 h-5 sm:h-6 -rotate-2 z-20"></div>
+              <div class="aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden relative shadow-2xl bg-black">
+                <img id="img-chapter-3" src="images/biryani_feast.jpg" alt="Hostel and college friends biryani feast"
+                  class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+
+                <label for="upload-3"
+                  class="absolute bottom-2.5 right-2.5 xs:bottom-3 xs:right-3 px-3 py-1.5 rounded-full bg-black/80 hover:bg-indigo-500 active:bg-indigo-400 text-white hover:text-black active:text-black border border-white/20 text-[10px] xs:text-xs font-mono tracking-wider cursor-pointer flex items-center gap-1.5 shadow-lg active:scale-95 transition">
+                  <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                  <span>Change Photo</span>
+                </label>
+                <input id="upload-3" type="file" accept="image/*" class="hidden"
+                  onchange="replacePhoto(event, 'img-chapter-3')" />
+              </div>
+              <div class="mt-2.5 sm:mt-3 text-center">
+                <p class="font-serif italic text-xs text-indigo-200">“The Foodie Squad: 2 AM Maggi to hotel Biryani
+                  feasts with the boys 🍛”</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Text & Slogans -->
+          <div class="lg:col-span-6 space-y-4 sm:space-y-6">
+            <div class="p-3.5 xs:p-4 rounded-2xl bg-black/50 border-l-4 border-indigo-500">
+              <p class="font-tamilTitle text-base xs:text-lg sm:text-xl text-indigo-300 font-semibold leading-relaxed">
+                "ஹாஸ்டல் ரூம் அரட்டை... இரவு நேர டீ... நம் நினைவுகள் என்றும் அழியாது!"
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-xs xs:text-sm sm:text-base leading-relaxed font-sans">
+              College brought us all together, but the hostel rooms and late nights made us brothers for life. Sharing
+              late-night Maggi, pulling all-nighters before semester exams, roadside filter chai, and talking about our
+              biggest dreams until the sun came up.
+            </p>
+
+            <p class="text-slate-300 text-xs xs:text-sm sm:text-base leading-relaxed font-sans">
+              Through every chaos, every trip, and every rough patch, AnbuMani was that steady, calm presence who always
+              said, <em>"Viduda Machan, paathukalam!"</em> His positive spirit made our hostel days genuinely
+              unforgettable.
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 sm:gap-4">
+              <div class="p-3 xs:p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/20">
+                <span class="text-[10px] xs:text-xs font-mono text-indigo-300 uppercase block">Hostel Chai Shared</span>
+                <span class="font-cinzel text-lg xs:text-xl font-bold text-white">Countless ☕</span>
+              </div>
+              <div class="p-3 xs:p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/20">
+                <span class="text-[10px] xs:text-xs font-mono text-indigo-300 uppercase block">Friendship Level</span>
+                <span class="font-cinzel text-lg xs:text-xl font-bold text-white">Lifetime ∞</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- COMEDY REELS & HOSTEL BLOOPERS VAULT (ZERO-LAG MOBILE VIDEO)-->
+    <!-- ========================================================= -->
+    <section id="comedy-vault"
+      class="py-14 xs:py-18 sm:py-24 px-3.5 sm:px-6 relative border-t border-rose-500/20 bg-gradient-to-b from-[#0C0610] via-[#140815] to-[#060B18]">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-3 reveal-masked-clip">
+          <div>
+            <div
+              class="flex items-center gap-2 text-rose-400 font-mono text-[10px] xs:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1.5">
+              <span class="w-6 sm:w-8 h-[2px] bg-rose-400"></span>
+              <span>Hostel Chaos & Roasts</span>
+            </div>
+            <h2 class="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white">Comedy Reels Vault
+            </h2>
+          </div>
+          <div class="flex items-center sm:block gap-2 sm:text-right">
+            <span
+              class="font-cinzelDeco text-3xl sm:text-5xl md:text-6xl font-black text-rose-500/30 sm:text-rose-500/20 block leading-none">LOL</span>
+            <span class="text-[10px] xs:text-xs font-mono uppercase tracking-wider text-rose-300/80 block">Zero
+              Buffering • Pure Fun</span>
+          </div>
+        </div>
+
+        <!-- Banner -->
+        <div class="p-3.5 sm:p-4 rounded-2xl bg-black/60 border-l-4 border-rose-500 mb-8 max-w-2xl reveal-masked-clip" style="transition-delay: 0.12s;">
+          <p class="font-tamilTitle text-base xs:text-lg sm:text-xl text-rose-300 font-semibold leading-relaxed">
+            "அன்புமணியின் சிரிப்பும்... ஹாஸ்டல் லூட்டி கலாட்டாக்களும்!"
+          </p>
+          <p class="text-xs text-slate-300 mt-1 font-sans">
+            Compressed for mobile displays so videos play instantly with zero latency or lag.
+          </p>
+        </div>
+
+        <!-- Video Reels Grid (3-Reel Responsive Layout) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto reveal-masked-clip" style="transition-delay: 0.22s;">
+
+          <!-- Video Card 1 -->
+          <div class="card-glass p-3 xs:p-4 rounded-2xl sm:rounded-3xl border-rose-500/30 relative flex flex-col group">
+            <div class="tape-accent absolute -top-2.5 left-6 w-20 h-5 -rotate-2 z-20"></div>
+
+            <div
+              class="aspect-[9/13] sm:aspect-[9/12] rounded-2xl overflow-hidden bg-black relative shadow-2xl flex items-center justify-center">
+              <video id="video-comedy-1" playsinline preload="metadata" controls poster="videos/poster_1.jpg"
+                class="w-full h-full object-cover">
+                <source src="videos/comedy_1.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+
+              <label for="upload-video-1"
+                class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/80 hover:bg-rose-500 active:bg-rose-400 text-white hover:text-black border border-white/20 text-[10px] font-mono tracking-wider cursor-pointer flex items-center gap-1 shadow transition active:scale-95 z-20">
+                <i data-lucide="video" class="w-3 h-3"></i>
+                <span>Change Video</span>
+              </label>
+              <input id="upload-video-1" type="file" accept="video/*" class="hidden"
+                onchange="replaceVideo(event, 'video-comedy-1')" />
+            </div>
+
+            <div class="mt-3 text-left">
+              <h3 class="font-cinzel text-base font-bold text-white">Reel #1: The Unfiltered Moments</h3>
+              <p class="text-xs text-slate-400 font-mono mt-0.5">Classic moments of AnbuMani & the hostel gang 😂</p>
+            </div>
+          </div>
+
+          <!-- Video Card 2 -->
+          <div class="card-glass p-3 xs:p-4 rounded-2xl sm:rounded-3xl border-rose-500/30 relative flex flex-col group">
+            <div class="tape-accent absolute -top-2.5 right-6 w-20 h-5 rotate-1 z-20"></div>
+
+            <div
+              class="aspect-[9/13] sm:aspect-[9/12] rounded-2xl overflow-hidden bg-black relative shadow-2xl flex items-center justify-center">
+              <video id="video-comedy-2" playsinline preload="metadata" controls poster="videos/poster_2.jpg"
+                class="w-full h-full object-cover">
+                <source src="videos/comedy_2.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+
+              <label for="upload-video-2"
+                class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/80 hover:bg-rose-500 active:bg-rose-400 text-white hover:text-black border border-white/20 text-[10px] font-mono tracking-wider cursor-pointer flex items-center gap-1 shadow transition active:scale-95 z-20">
+                <i data-lucide="video" class="w-3 h-3"></i>
+                <span>Change Video</span>
+              </label>
+              <input id="upload-video-2" type="file" accept="video/*" class="hidden"
+                onchange="replaceVideo(event, 'video-comedy-2')" />
+            </div>
+
+            <div class="mt-3 text-left">
+              <h3 class="font-cinzel text-base font-bold text-white">Reel #2: Campus Shenanigans</h3>
+              <p class="text-xs text-slate-400 font-mono mt-0.5">When the gang gets together, chaos is guaranteed 🔥</p>
+            </div>
+          </div>
+
+          <!-- Video Card 3 -->
+          <div class="card-glass p-3 xs:p-4 rounded-2xl sm:rounded-3xl border-rose-500/30 relative flex flex-col group">
+            <div class="tape-accent absolute -top-2.5 right-6 w-20 h-5 -rotate-2 z-20"></div>
+
+            <div
+              class="aspect-[9/13] sm:aspect-[9/12] rounded-2xl overflow-hidden bg-black relative shadow-2xl flex items-center justify-center">
+              <video id="video-comedy-3" playsinline preload="metadata" controls poster="videos/poster_4.jpg"
+                class="w-full h-full object-cover">
+                <source src="videos/comedy_4.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+
+              <label for="upload-video-3"
+                class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/80 hover:bg-rose-500 active:bg-rose-400 text-white hover:text-black border border-white/20 text-[10px] font-mono tracking-wider cursor-pointer flex items-center gap-1 shadow transition active:scale-95 z-20">
+                <i data-lucide="video" class="w-3 h-3"></i>
+                <span>Change Video</span>
+              </label>
+              <input id="upload-video-3" type="file" accept="video/*" class="hidden"
+                onchange="replaceVideo(event, 'video-comedy-3')" />
+            </div>
+
+            <div class="mt-3 text-left">
+              <h3 class="font-cinzel text-base font-bold text-white">Reel #3: Night Roasts & Banter</h3>
+              <p class="text-xs text-slate-400 font-mono mt-0.5">Late night hostel memories we will never forget 🌙</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- CHAPTER 4: THE FRIEND WHO BECAME FAMILY                   -->
+    <!-- ========================================================= -->
+    <section id="character"
+      class="bg-chapter-4 py-14 xs:py-18 sm:py-24 md:py-28 px-3.5 sm:px-6 relative border-t border-emerald-500/15">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Chapter Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-14 gap-3 reveal-right-heading">
+          <div>
+            <div
+              class="flex items-center gap-2 text-emerald-400 font-mono text-[10px] xs:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-1.5">
+              <span class="w-6 sm:w-8 h-[2px] bg-emerald-400"></span>
+              <span>Chapter IV • The Unshakable Pillar</span>
+            </div>
+            <h2 class="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white">A Friend Who
+              Became Family</h2>
+          </div>
+          <div class="flex items-center sm:block gap-2 sm:text-right">
+            <span
+              class="font-cinzelDeco text-3xl sm:text-5xl md:text-6xl font-black text-emerald-500/30 sm:text-emerald-500/20 block leading-none">FAMILY</span>
+            <span class="text-[10px] xs:text-xs font-mono uppercase tracking-wider text-emerald-300/80 block">Always By
+              Our Side</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-center reveal-right-content">
+
+          <!-- Image -->
+          <div class="lg:col-span-6 order-1 lg:order-2">
+            <div class="card-glass p-3 xs:p-4 rounded-2xl sm:rounded-3xl relative group border-emerald-500/30">
+              <div class="tape-accent absolute -top-2.5 right-6 sm:right-10 w-20 sm:w-24 h-5 sm:h-6 rotate-2 z-20">
+              </div>
+              <div class="aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden relative shadow-2xl bg-black">
+                <img id="img-chapter-4" src="images/carrying_anbu.jpg" alt="Lifting and carrying AnbuMani"
+                  class="w-full h-full object-cover object-[50%_30%] group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+
+                <label for="upload-4"
+                  class="absolute bottom-2.5 right-2.5 xs:bottom-3 xs:right-3 px-3 py-1.5 rounded-full bg-black/80 hover:bg-emerald-500 active:bg-emerald-400 text-white hover:text-black active:text-black border border-white/20 text-[10px] xs:text-xs font-mono tracking-wider cursor-pointer flex items-center gap-1.5 shadow-lg active:scale-95 transition">
+                  <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                  <span>Change Photo</span>
+                </label>
+                <input id="upload-4" type="file" accept="image/*" class="hidden"
+                  onchange="replacePhoto(event, 'img-chapter-4')" />
+              </div>
+              <div class="mt-2.5 sm:mt-3 text-center">
+                <p class="font-serif italic text-xs text-emerald-200">“Literally carrying each other through every high
+                  and low! 🤝”</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story Text & Slogans -->
+          <div class="lg:col-span-6 space-y-4 sm:space-y-6 order-2 lg:order-1">
+            <div class="p-3.5 xs:p-4 rounded-2xl bg-black/50 border-l-4 border-emerald-500">
+              <p class="font-tamilTitle text-base xs:text-lg sm:text-xl text-emerald-300 font-semibold leading-relaxed">
+                "நண்பனாக அறிமுகமாகி... உடன் பிறந்த சகோதரனாக நெஞ்சில் நின்றவன் அன்புமணி!"
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-xs xs:text-sm sm:text-base leading-relaxed font-sans">
+              People change as time passes, but AnbuMani's friendship has always been genuine and steady. Whenever
+              anyone in our gang was going through a tough time, he was the first person to show up and stay by our side
+              without expecting anything back.
+            </p>
+
+            <p class="text-slate-300 text-xs xs:text-sm sm:text-base leading-relaxed font-sans">
+              Having a friend like AnbuMani isn't ordinary — it's a blessing. He celebrates our wins like his own, lifts
+              us up when we are down, and brings everyone together with pure affection.
+            </p>
+
+            <div
+              class="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-emerald-950/30 border border-emerald-500/30 text-xs font-serif italic text-emerald-200">
+              "For the Memories. For the Friendship. For You, AnbuMani."
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- CHAPTER 5: A LITTLE GIFT, A LOT OF MEMORIES (LEVEL 22)    -->
+    <!-- ========================================================= -->
+    <section id="level22"
+      class="bg-chapter-5 py-16 xs:py-20 sm:py-28 md:py-32 px-3.5 sm:px-6 relative border-t border-amber-500/20">
+      <div class="max-w-6xl mx-auto text-center">
+
+        <!-- Chapter Header -->
+        <div class="reveal-fade-scale-up">
+          <div
+            class="inline-flex items-center gap-2 px-4 xs:px-5 py-1.5 sm:py-2 rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-300 text-[10px] xs:text-xs font-mono uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-6 sm:mb-8 animate-glowPulse">
+            <i data-lucide="gift" class="w-3.5 h-3.5 xs:w-4 xs:h-4"></i>
+            <span>A Little Gift, A Lot of Memories</span>
+            <i data-lucide="gift" class="w-3.5 h-3.5 xs:w-4 xs:h-4"></i>
+          </div>
+
+          <h2
+            class="font-cinzelDeco text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-extrabold text-gold-gradient tracking-tight mb-3 sm:mb-4">
+            HAPPY 22ND BIRTHDAY, MACHI!
+          </h2>
+
+          <!-- Slogan & Tribute Message -->
+          <div
+            class="max-w-3xl mx-auto p-4 xs:p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-black/60 border border-amber-500/40 backdrop-blur-xl mb-8 sm:mb-12 shadow-2xl">
+            <p
+              class="font-tamilTitle text-xl xs:text-2xl sm:text-3xl text-amber-300 font-bold leading-snug xs:leading-relaxed">
+              "22 வருடங்கள் கடந்திருக்கலாம்... ஆனால் நம் நட்பு என்றும் தொடரும்!"
+            </p>
+            <p class="text-xs xs:text-sm text-slate-300 font-sans mt-3 leading-relaxed">
+              This little website is made of our college stories, hostel laughs, and all the moments we've shared. Happy
+              22nd Birthday, <span class="font-semibold text-amber-300">AnbuMani</span>! May your path be filled with
+              great success and endless smiles.
+            </p>
+          </div>
+        </div>
+
+        <!-- 22 Years Memories Stats Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 xs:gap-3 sm:gap-4 max-w-4xl mx-auto mb-10 sm:mb-16 reveal-fade-scale-up" style="transition-delay: 0.18s;">
+          <div class="p-3.5 xs:p-4 sm:p-6 rounded-2xl sm:rounded-3xl card-glass border-amber-500/30">
+            <span
+              class="font-cinzelDeco text-2xl xs:text-3xl sm:text-5xl font-black text-amber-300 block mb-0.5 sm:mb-1">22</span>
+            <span class="text-[10px] xs:text-xs font-mono text-slate-400 uppercase tracking-wider">Years on Earth</span>
+          </div>
+          <div class="p-3.5 xs:p-4 sm:p-6 rounded-2xl sm:rounded-3xl card-glass border-amber-500/30">
+            <span
+              class="font-cinzelDeco text-2xl xs:text-3xl sm:text-5xl font-black text-amber-300 block mb-0.5 sm:mb-1">100+</span>
+            <span class="text-[10px] xs:text-xs font-mono text-slate-400 uppercase tracking-wider">Hostel Maggi
+              Bowls</span>
+          </div>
+          <div class="p-3.5 xs:p-4 sm:p-6 rounded-2xl sm:rounded-3xl card-glass border-amber-500/30">
+            <span
+              class="font-cinzelDeco text-2xl xs:text-3xl sm:text-5xl font-black text-amber-300 block mb-0.5 sm:mb-1">1,000+</span>
+            <span class="text-[10px] xs:text-xs font-mono text-slate-400 uppercase tracking-wider">Unfiltered
+              Laughs</span>
+          </div>
+          <div class="p-3.5 xs:p-4 sm:p-6 rounded-2xl sm:rounded-3xl card-glass border-amber-500/30">
+            <span
+              class="font-cinzelDeco text-2xl xs:text-3xl sm:text-5xl font-black text-amber-400 block mb-0.5 sm:mb-1">∞</span>
+            <span class="text-[10px] xs:text-xs font-mono text-slate-400 uppercase tracking-wider">Friendship
+              Ratio</span>
+          </div>
+        </div>
+
+        <!-- Spotlight Photo of AnbuMani with Upload -->
+        <div
+          class="max-w-xl mx-auto card-glass p-3.5 xs:p-5 rounded-2xl sm:rounded-3xl border-amber-500/40 relative mb-8 sm:mb-12">
+          <div class="tape-accent absolute -top-2.5 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-5 sm:h-6 -rotate-1 z-20">
+          </div>
+          <div class="aspect-square rounded-xl sm:rounded-2xl overflow-hidden relative shadow-2xl bg-black">
+            <img id="img-chapter-5" src="images/mall_gang_selfie.jpg" alt="AnbuMani and the boys"
+              class="w-full h-full object-cover object-[50%_35%] hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20"></div>
+
+            <label for="upload-5"
+              class="absolute bottom-3 xs:bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-amber-500 hover:bg-amber-400 active:bg-amber-300 text-black font-extrabold text-[10px] xs:text-xs font-mono tracking-wider cursor-pointer flex items-center gap-1.5 xs:gap-2 shadow-xl active:scale-95 transition whitespace-nowrap">
+              <i data-lucide="camera" class="w-3.5 h-3.5 xs:w-4 xs:h-4"></i>
+              <span>Change Birthday Photo</span>
+            </label>
+            <input id="upload-5" type="file" accept="image/*" class="hidden"
+              onchange="replacePhoto(event, 'img-chapter-5')" />
+          </div>
+          <div class="mt-3 sm:mt-4">
+            <h3 class="font-cinzel text-lg xs:text-xl font-bold text-white">ANBUMANI & THE BOYS • CHAPTER 22</h3>
+            <p class="text-[11px] xs:text-xs text-slate-400 font-mono mt-1">“From college days to memories for a
+              lifetime.”</p>
+          </div>
+        </div>
+
+        <!-- Dedicated Real Memories Polaroid Wall (6 Unforgettable Moments) -->
+        <div class="max-w-5xl mx-auto mb-12 sm:mb-16">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-[10px] xs:text-xs font-mono uppercase tracking-widest mb-6">
+            <i data-lucide="camera" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span>Our College & Hostel Snapshot Vault</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 xs:gap-4 sm:gap-6">
+            <!-- Polaroid 1: Hostel Swag Pose -->
+            <div
+              class="card-glass p-2.5 xs:p-3 rounded-2xl relative group transform hover:-translate-y-1.5 transition-all duration-300 text-center">
+              <div class="tape-accent absolute -top-2 left-4 xs:left-6 w-14 xs:w-16 h-3.5 xs:h-4 -rotate-3 z-20"></div>
+              <div class="aspect-[4/5] rounded-xl overflow-hidden bg-black shadow-inner">
+                <img src="images/anbu_hostel_pose.jpg" alt="Hostel Swag"
+                  class="w-full h-full object-cover object-[50%_15%] group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="font-serif italic text-[11px] xs:text-xs text-amber-200 mt-2">Thaggedhele 🕶️</p>
+              <p class="text-[9px] xs:text-[10px] font-mono text-slate-400">Hostel Mirror Swag</p>
+            </div>
+
+            <!-- Polaroid 2: Campus Trio -->
+            <div
+              class="card-glass p-2.5 xs:p-3 rounded-2xl relative group transform hover:-translate-y-1.5 transition-all duration-300 text-center">
+              <div class="tape-accent absolute -top-2 right-4 xs:right-6 w-14 xs:w-16 h-3.5 xs:h-4 rotate-2 z-20"></div>
+              <div class="aspect-[4/5] rounded-xl overflow-hidden bg-black shadow-inner">
+                <img src="images/gang_selfie.jpg" alt="Campus Trio"
+                  class="w-full h-full object-cover object-[50%_20%] group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="font-serif italic text-[11px] xs:text-xs text-amber-200 mt-2">The Campus Trio 🤙</p>
+              <p class="text-[9px] xs:text-[10px] font-mono text-slate-400">Hostel Frontline</p>
+            </div>
+
+            <!-- Polaroid 3: Biryani Feast -->
+            <div
+              class="card-glass p-2.5 xs:p-3 rounded-2xl relative group transform hover:-translate-y-1.5 transition-all duration-300 text-center">
+              <div
+                class="tape-accent absolute -top-2 left-1/2 -translate-x-1/2 w-14 xs:w-16 h-3.5 xs:h-4 -rotate-1 z-20">
+              </div>
+              <div class="aspect-[4/5] rounded-xl overflow-hidden bg-black shadow-inner">
+                <img src="images/biryani_feast.jpg" alt="Biryani Feast"
+                  class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="font-serif italic text-[11px] xs:text-xs text-amber-200 mt-2">Biryani Overload 🍛</p>
+              <p class="text-[9px] xs:text-[10px] font-mono text-slate-400">Foodie Brotherhood</p>
+            </div>
+
+            <!-- Polaroid 4: Cafe Sleeping Pose -->
+            <div
+              class="card-glass p-2.5 xs:p-3 rounded-2xl relative group transform hover:-translate-y-1.5 transition-all duration-300 text-center">
+              <div class="tape-accent absolute -top-2 left-4 xs:left-6 w-14 xs:w-16 h-3.5 xs:h-4 rotate-2 z-20"></div>
+              <div class="aspect-[4/5] rounded-xl overflow-hidden bg-black shadow-inner">
+                <img src="images/cafe_treat.jpg" alt="Sleeping Beauty"
+                  class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="font-serif italic text-[11px] xs:text-xs text-amber-200 mt-2">Sleeping Beauty 😂</p>
+              <p class="text-[9px] xs:text-[10px] font-mono text-slate-400">Cafe Chaos</p>
+            </div>
+
+            <!-- Polaroid 5: Dinner with Brothers -->
+            <div
+              class="card-glass p-2.5 xs:p-3 rounded-2xl relative group transform hover:-translate-y-1.5 transition-all duration-300 text-center">
+              <div class="tape-accent absolute -top-2 right-4 xs:right-6 w-14 xs:w-16 h-3.5 xs:h-4 -rotate-2 z-20">
+              </div>
+              <div class="aspect-[4/5] rounded-xl overflow-hidden bg-black shadow-inner">
+                <img src="images/dinner_treat.jpg" alt="Dinner with Brothers"
+                  class="w-full h-full object-cover object-[50%_45%] group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="font-serif italic text-[11px] xs:text-xs text-amber-200 mt-2">Dinner with Brothers 🍽️</p>
+              <p class="text-[9px] xs:text-[10px] font-mono text-slate-400">Unforgettable Feasts</p>
+            </div>
+
+            <!-- Polaroid 6: Pure Love Kiss -->
+            <div
+              class="card-glass p-2.5 xs:p-3 rounded-2xl relative group transform hover:-translate-y-1.5 transition-all duration-300 text-center">
+              <div
+                class="tape-accent absolute -top-2 left-1/2 -translate-x-1/2 w-14 xs:w-16 h-3.5 xs:h-4 rotate-3 z-20">
+              </div>
+              <div class="aspect-[4/5] rounded-xl overflow-hidden bg-black shadow-inner">
+                <img src="images/brotherhood_love.jpg" alt="Pure Machan Love"
+                  class="w-full h-full object-cover object-[50%_20%] group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <p class="font-serif italic text-[11px] xs:text-xs text-amber-200 mt-2">Pure Machan Love ❤️</p>
+              <p class="text-[9px] xs:text-[10px] font-mono text-slate-400">Brothers for Life</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Confetti Cannon Button -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-2">
+          <button onclick="launchBirthdayConfetti()"
+            class="w-full sm:w-auto px-6 xs:px-10 py-3.5 xs:py-4 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black font-black text-xs xs:text-sm uppercase tracking-widest shadow-[0_10px_35px_rgba(245,158,11,0.4)] hover:scale-105 active:scale-95 transition flex items-center justify-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 xs:w-5 xs:h-5"></i>
+            <span>Blast Birthday Fireworks for Machan! 🎆</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER TRIBUTE -->
+    <footer class="border-t border-white/10 py-12 xs:py-16 px-4 text-center bg-[#05060A] pb-[calc(3rem+var(--sab))]">
+      <div class="max-w-4xl mx-auto space-y-3 sm:space-y-4">
+        <div
+          class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-amber-500/15 border border-amber-400/40 flex items-center justify-center text-amber-400 mx-auto font-cinzel font-black text-lg sm:text-xl shadow-lg">
+          22
+        </div>
+        <h3 class="font-cinzelDeco text-xl sm:text-2xl font-bold tracking-widest text-gold-gradient">ANBUMANI</h3>
+        <p class="text-xs text-slate-300 font-serif italic max-w-md mx-auto leading-relaxed">
+          “From our college days and hostel memories, this little surprise is just for you, AnbuMani.”
+        </p>
+        <p class="text-xs font-semibold text-rose-400">
+          Happy Birthday, Machi! ❤️
+        </p>
+        <div class="text-[10px] xs:text-[11px] font-mono text-amber-500/70 pt-1 sm:pt-2 uppercase tracking-widest">
+          Crafted with love by your College & Hostel Gang
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast"
+    class="fixed left-1/2 -translate-x-1/2 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none max-w-[90vw]">
+    <div
+      class="card-glass px-4 xs:px-6 py-2.5 xs:py-3 rounded-full shadow-2xl flex items-center gap-2 text-xs font-semibold text-amber-300 border border-amber-400/50 whitespace-nowrap">
+      <i data-lucide="sparkles" class="w-4 h-4 text-amber-400 shrink-0"></i>
+      <span id="toast-text">Message</span>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT: STAGED CINEMATIC INTRO & INTERACTIVITY        -->
+  <!-- ========================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 1. PIN Gateway & Staged Cinematic Sequence
+    const CORRECT_PIN = "2005";
+
+    // The cinematic staged lines requested by user
+    const cinematicScenes = [
+      { text: "Some moments are ordinary...", dot: 0, duration: 1800 },
+      { text: "Some become memories.", dot: 1, duration: 1800 },
+      { text: "Some memories become stories.", dot: 2, duration: 1800 },
+      { text: "And some friends become family.", dot: 3, duration: 2000 },
+      {
+        html: `
+          <div class="space-y-3 animate-fadeInUp">
+            <h1 class="font-cinzelDeco text-3xl xs:text-4xl sm:text-6xl font-bold text-gold-gradient tracking-wide">
+              ANBUMANI
+            </h1>
+            <p class="font-serif italic text-xl sm:text-2xl text-amber-300">
+              “A Little Gift, A Lot of Memories.”
+            </p>
+            <p class="text-xs sm:text-sm text-slate-300 font-mono tracking-widest uppercase text-rose-300 pt-1">
+              From your college & hostel friends ❤️
+            </p>
+          </div>
+        `,
+        dot: 4,
+        duration: 3200
+      }
+    ];
+
+    let cinematicTimer = null;
+    let isCinematicSkipped = false;
+
+    function triggerPinPrompt() {
+      const pinInput = document.getElementById('pin-input');
+      pinInput.focus();
+      pinInput.classList.add('ring-2', 'ring-amber-400');
+      setTimeout(() => pinInput.classList.remove('ring-2', 'ring-amber-400'), 800);
+    }
+
+    function verifyPin(event) {
+      if (event) event.preventDefault();
+      const pinInputField = document.getElementById('pin-input');
+      const pinInput = pinInputField ? pinInputField.value.trim() : '';
+      const envelopeCard = document.getElementById('envelope-main');
+      const lockedGateway = document.getElementById('locked-gateway');
+
+      if (pinInput === CORRECT_PIN) {
+        // Android haptic feedback
+        if (navigator.vibrate) {
+          try { navigator.vibrate([60, 40, 100]); } catch (e) { }
+        }
+
+        // Play chime & envelope fold-out
+        initWebAudio();
+        playUnlockChime();
+        if (envelopeCard) envelopeCard.classList.add('envelope-opening');
+
+        // Confetti burst
+        launchBirthdayConfetti();
+
+        // Fade gateway out and begin cinematic interlude
+        setTimeout(() => {
+          if (lockedGateway) {
+            lockedGateway.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+              lockedGateway.style.display = 'none';
+            }, 900);
+          }
+          startCinematicIntro();
+        }, 600);
+
+      } else {
+        if (envelopeCard) {
+          envelopeCard.classList.remove('animate-shake');
+          void envelopeCard.offsetWidth;
+          envelopeCard.classList.add('animate-shake');
+        }
+
+        if (pinInputField) {
+          pinInputField.classList.add('border-rose-500', 'ring-2', 'ring-rose-500/50');
+          setTimeout(() => {
+            pinInputField.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500/50');
+          }, 800);
+        }
+
+        if (navigator.vibrate) {
+          try { navigator.vibrate(200); } catch (e) { }
+        }
+      }
+    }
+
+    // Run Staged Cinematic Sequence
+    function startCinematicIntro() {
+      const interlude = document.getElementById('cinematic-interlude');
+      interlude.classList.remove('pointer-events-none', 'opacity-0');
+      interlude.classList.add('opacity-100');
+
+      let currentStep = 0;
+
+      function renderScene() {
+        if (isCinematicSkipped) return;
+        if (currentStep >= cinematicScenes.length) {
+          finishCinematic();
+          return;
+        }
+
+        const scene = cinematicScenes[currentStep];
+        const textBox = document.getElementById('cinematic-text-box');
+        const lineElem = document.getElementById('cinematic-line');
+
+        // Highlight active dot
+        for (let i = 0; i < 5; i++) {
+          const dot = document.getElementById(`dot-${i}`);
+          if (dot) {
+            if (i === scene.dot) {
+              dot.className = 'w-4 h-2 rounded-full bg-amber-400 shadow-[0_0_10px_#F59E0B] transition-all duration-300';
+            } else if (i < scene.dot) {
+              dot.className = 'w-2 h-2 rounded-full bg-amber-500/60 transition-all duration-300';
+            } else {
+              dot.className = 'w-2 h-2 rounded-full bg-white/15 transition-all duration-300';
+            }
+          }
+        }
+
+        // Fade out old text
+        lineElem.classList.add('opacity-0', 'translate-y-4');
+        lineElem.classList.remove('opacity-100', 'translate-y-0');
+
+        setTimeout(() => {
+          if (isCinematicSkipped) return;
+          if (scene.html) {
+            textBox.innerHTML = scene.html;
+          } else {
+            lineElem.innerText = scene.text;
+            lineElem.classList.remove('opacity-0', 'translate-y-4');
+            lineElem.classList.add('opacity-100', 'translate-y-0');
+          }
+
+          // Gentle ambient notes as scenes unfold
+          if (audioCtx) {
+            const chimeNotes = [369.99, 440.00, 493.88, 587.33, 739.99];
+            playNote(chimeNotes[currentStep % chimeNotes.length], audioCtx.currentTime, 1.5);
+          }
+
+          currentStep++;
+          cinematicTimer = setTimeout(renderScene, scene.duration);
+        }, 400);
+      }
+
+      renderScene();
+    }
+
+    function skipCinematic() {
+      isCinematicSkipped = true;
+      if (cinematicTimer) clearTimeout(cinematicTimer);
+      finishCinematic();
+    }
+
+    function finishCinematic() {
+      const interlude = document.getElementById('cinematic-interlude');
+      const mainStory = document.getElementById('main-story');
+      const quickControls = document.getElementById('quick-controls');
+
+      interlude.classList.add('opacity-0', 'pointer-events-none');
+      mainStory.classList.remove('opacity-0');
+      quickControls.classList.remove('hidden');
+      quickControls.classList.add('flex');
+
+      // Start ambient music
+      toggleAmbientMusic(true);
+      launchBirthdayConfetti();
+      showToast('Happy Birthday, Machi! From your friends ❤️');
+
+      // Trigger hero text entrance animation
+      const heroSection = document.getElementById('hero-section');
+      if (heroSection) {
+        setTimeout(() => {
+          heroSection.classList.add('hero-revealed');
+        }, 150);
+      }
+
+      if (typeof window.updateHeroScroll === 'function') {
+        window.updateHeroScroll();
+      }
+
+      setTimeout(() => {
+        interlude.style.display = 'none';
+      }, 1000);
+    }
+
+    // 2. Direct Photo Replacement (Local upload for each chapter)
+    function replacePhoto(event, targetImgId) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const targetImg = document.getElementById(targetImgId);
+        if (targetImg) {
+          targetImg.src = e.target.result;
+          launchBirthdayConfetti();
+          showToast('Photo updated successfully! 📸');
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Video Replacement with zero mobile latency
+    function replaceVideo(event, targetVideoId) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const videoElem = document.getElementById(targetVideoId);
+      if (videoElem) {
+        const fileUrl = URL.createObjectURL(file);
+        videoElem.src = fileUrl;
+        videoElem.load();
+        videoElem.play().catch(() => { });
+        launchBirthdayConfetti();
+        showToast('Comedy Reel loaded! 🎬');
+      }
+    }
+
+    // Mobile Video Performance: Single video playback (prevents mobile CPU/memory lag)
+    function initVideoPerformance() {
+      document.querySelectorAll('video').forEach(vid => {
+        vid.addEventListener('play', () => {
+          document.querySelectorAll('video').forEach(other => {
+            if (other !== vid) other.pause();
+          });
+        });
+      });
+    }
+    initVideoPerformance();
+
+    // 3. Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      const progressBar = document.getElementById('progress-bar');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+    }, { passive: true });
+
+    // 4. Canvas Floating Particles Animation
+    const canvas = document.getElementById('canvas-particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function setupCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = [];
+      const divisor = window.innerWidth < 640 ? 24000 : 16000;
+      const particleCount = Math.min(60, Math.floor((canvas.width * canvas.height) / divisor));
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.8 + 0.5,
+          alpha: Math.random() * 0.6 + 0.2,
+          speedY: Math.random() * 0.35 + 0.1,
+          speedX: (Math.random() - 0.5) * 0.25,
+          color: Math.random() > 0.4 ? '#F59E0B' : '#F43F5E'
+        });
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = p.color;
+        ctx.fill();
+
+        p.y -= p.speedY;
+        p.x += p.speedX;
+
+        if (p.y < 0) {
+          p.y = canvas.height;
+          p.x = Math.random() * canvas.width;
+        }
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    window.addEventListener('resize', setupCanvas);
+    window.addEventListener('orientationchange', () => {
+      setTimeout(setupCanvas, 150);
+    });
+    setupCanvas();
+    animateParticles();
+
+    // 5. Web Audio API Ambient Synthesizer
+    let audioCtx = null;
+    let isPlayingAudio = false;
+    let melodyTimer = null;
+
+    function initWebAudio() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playNote(freq, startTime, duration = 1.4) {
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, startTime);
+
+        gain.gain.setValueAtTime(0.0001, startTime);
+        gain.gain.exponentialRampToValueAtTime(0.06, startTime + 0.12);
+        gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(startTime);
+        osc.stop(startTime + duration);
+      } catch (err) {
+        // audio playback gracefully skipped if suspended
+      }
+    }
+
+    function playUnlockChime() {
+      if (!audioCtx) return;
+      const now = audioCtx.currentTime;
+      const chimeNotes = [293.66, 369.99, 440.00, 587.33, 739.99, 880.00];
+      chimeNotes.forEach((freq, idx) => {
+        playNote(freq, now + idx * 0.1, 1.2);
+      });
+    }
+
+    function playNostalgicSequence() {
+      if (!audioCtx) return;
+      const now = audioCtx.currentTime;
+      const chords = [
+        [293.66, 369.99, 440.00], // D Major
+        [246.94, 293.66, 369.99], // B Minor
+        [196.00, 246.94, 293.66], // G Major
+        [220.00, 277.18, 329.63]  // A Major
+      ];
+
+      chords.forEach((chord, cIdx) => {
+        chord.forEach((freq, nIdx) => {
+          playNote(freq, now + cIdx * 1.6 + nIdx * 0.25, 2.0);
+        });
+      });
+    }
+
+    function toggleAmbientMusic(forceStart = false) {
+      initWebAudio();
+      const icon = document.getElementById('audio-toggle-icon');
+
+      if (isPlayingAudio && !forceStart) {
+        clearInterval(melodyTimer);
+        isPlayingAudio = false;
+        if (icon) icon.setAttribute('data-lucide', 'volume-x');
+        lucide.createIcons();
+        showToast('Soundtrack paused');
+      } else {
+        isPlayingAudio = true;
+        if (icon) icon.setAttribute('data-lucide', 'volume-2');
+        lucide.createIcons();
+        playNostalgicSequence();
+        melodyTimer = setInterval(playNostalgicSequence, 6500);
+      }
+    }
+
+    // 6. Confetti Cannon
+    function launchBirthdayConfetti() {
+      if (typeof confetti === 'function') {
+        const isMobile = window.innerWidth < 640;
+        confetti({
+          particleCount: isMobile ? 55 : 85,
+          spread: isMobile ? 70 : 85,
+          origin: { y: 0.65 },
+          colors: ['#F59E0B', '#F43F5E', '#10B981', '#6366F1', '#FBBF24']
+        });
+        setTimeout(() => {
+          confetti({
+            particleCount: isMobile ? 35 : 55,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: ['#F59E0B', '#EF4444', '#FFF']
+          });
+          confetti({
+            particleCount: isMobile ? 35 : 55,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: ['#F59E0B', '#EF4444', '#FFF']
+          });
+        }, 180);
+      }
+      showToast('Happy Birthday, Machi! 🥂❤️');
+    }
+
+    // 7. Toast Notification Utility
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toast-text');
+      if (!toast || !text) return;
+
+      text.innerText = msg;
+      clearTimeout(toastTimeout);
+
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    // =========================================================
+    // 8. CINEMATIC HERO SCROLL FADE + INDEPENDENT PERSON PARALLAX
+    // =========================================================
+    function initHeroScrollAnimation() {
+      const track = document.getElementById('hero-scroll-track');
+      const heroSection = document.getElementById('hero-section');
+      const bgImg = document.getElementById('hero-bg-img');
+      const imageWrap = document.getElementById('hero-single-image-wrap');
+      const ambientGlow = document.getElementById('hero-ambient-glow');
+      const scrollCue = document.getElementById('hero-scroll-cue');
+
+      // Individual hero text elements for staggered movement
+      const heroLabel = document.getElementById('hero-label');
+      const heroTitle = document.getElementById('hero-title');
+      const heroTagline = document.getElementById('hero-tagline');
+      const heroDesc = document.getElementById('hero-desc');
+      const heroHighlightName = document.getElementById('hero-highlight-name');
+      const heroBdayText = document.getElementById('hero-bday-text');
+      const heroBdayHeart = document.getElementById('hero-bday-heart');
+      const heroTamilBanner = document.getElementById('hero-tamil-banner');
+
+      if (!track || !heroSection || !imageWrap) return;
+
+      function clamp(val, min = 0, max = 1) {
+        return Math.min(Math.max(val, min), max);
+      }
+
+      // Smooth step for continuous cinematic interpolation between keyframe points
+      function interpolateKeyframes(p, points, smooth = true) {
+        if (p <= points[0][0]) return points[0][1];
+        if (p >= points[points.length - 1][0]) return points[points.length - 1][1];
+        for (let i = 0; i < points.length - 1; i++) {
+          const [p0, v0] = points[i];
+          const [p1, v1] = points[i + 1];
+          if (p >= p0 && p <= p1) {
+            let t = (p - p0) / (p1 - p0);
+            if (smooth) {
+              t = t * t * (3 - 2 * t);
+            }
+            return v0 + (v1 - v0) * t;
+          }
+        }
+        return points[points.length - 1][1];
+      }
+
+      function update() {
+        const rect = track.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const totalScrollable = rect.height - windowHeight;
+
+        let progress = 0;
+        if (totalScrollable > 0) {
+          progress = clamp(-rect.top / totalScrollable, 0, 1);
+        }
+
+        const isMobile = window.innerWidth < 768;
+
+        // Reset cleanly to CSS defaults when at the top (progress === 0)
+        if (progress <= 0.005) {
+          if (scrollCue) {
+            scrollCue.style.opacity = '1';
+            scrollCue.style.pointerEvents = 'auto';
+          }
+          if (bgImg) {
+            bgImg.style.transform = '';
+            bgImg.style.opacity = '1';
+          }
+          if (imageWrap) {
+            imageWrap.style.transform = '';
+            imageWrap.style.opacity = '1';
+          }
+          if (ambientGlow) {
+            ambientGlow.style.transform = '';
+            ambientGlow.style.opacity = '0.6';
+          }
+          const textList = [heroLabel, heroTitle, heroTagline, heroDesc, heroHighlightName, heroBdayText, heroBdayHeart, heroTamilBanner];
+          textList.forEach(el => {
+            if (el) {
+              el.style.transform = '';
+              el.style.opacity = '';
+              el.style.transition = '';
+            }
+          });
+          const descLines = document.querySelectorAll('#hero-desc .hero-desc-line');
+          descLines.forEach(line => {
+            line.style.transform = '';
+            line.style.opacity = '';
+          });
+          return;
+        }
+
+        // 1. SCROLL DOWN INDICATOR (Smoothly fades out on initial scroll)
+        if (scrollCue) {
+          const cueOpacity = clamp(1 - (progress / 0.12), 0, 1);
+          scrollCue.style.opacity = cueOpacity.toFixed(3);
+          scrollCue.style.pointerEvents = cueOpacity <= 0.05 ? 'none' : 'auto';
+        }
+
+        // 2. LAYER 1: NATURE BACKGROUND SCROLL ANIMATION (Slower Movement)
+        // 0%: translateY(0), scale: 1.05, opacity: 1
+        // 100%: translateY(-50px), scale: 1.08, opacity: 0
+        if (bgImg) {
+          const bgYPoints = isMobile
+            ? [[0.0, 0], [0.3, -8], [0.6, -18], [0.8, -24], [1.0, -30]]
+            : [[0.0, 0], [0.3, -15], [0.6, -30], [0.8, -42], [1.0, -50]];
+          const bgOpacityPoints = [
+            [0.0, 1.0], [0.3, 0.95], [0.6, 0.65], [0.8, 0.30], [1.0, 0.0]
+          ];
+          const bgScalePoints = [
+            [0.0, 1.05], [0.5, 1.065], [1.0, 1.08]
+          ];
+
+          const bgY = interpolateKeyframes(progress, bgYPoints);
+          const bgOpacity = clamp(interpolateKeyframes(progress, bgOpacityPoints), 0, 1);
+          const bgScale = interpolateKeyframes(progress, bgScalePoints);
+
+          bgImg.style.transform = `translate3d(0, ${bgY.toFixed(2)}px, 0) scale3d(${bgScale.toFixed(3)}, ${bgScale.toFixed(3)}, 1)`;
+          bgImg.style.opacity = bgOpacity.toFixed(3);
+        }
+
+        // 3. LAYER 2: TRANSPARENT PERSON IMAGE SCROLL ANIMATION (Faster Foreground Movement)
+        // Exact specifications:
+        // 0% scroll: translateY(0px), opacity: 1, scale: 1
+        // 30%: translateY(-25px), opacity: 0.9, scale: 1.01
+        // 60%: translateY(-60px), opacity: 0.6, scale: 1.03
+        // 80%: translateY(-85px), opacity: 0.3, scale: 1.04
+        // 100%: translateY(-100px), opacity: 0, scale: 1.05
+        const personYPoints = isMobile
+          ? [[0.0, 0], [0.3, -15], [0.6, -35], [0.8, -50], [1.0, -60]]
+          : [[0.0, 0], [0.3, -25], [0.6, -60], [0.8, -85], [1.0, -100]];
+        const personOpacityPoints = [
+          [0.0, 1.0], [0.3, 0.90], [0.6, 0.60], [0.8, 0.30], [1.0, 0.0]
+        ];
+        const personScalePoints = isMobile
+          ? [[0.0, 1.00], [0.3, 1.005], [0.6, 1.015], [0.8, 1.02], [1.0, 1.03]]
+          : [[0.0, 1.00], [0.3, 1.01], [0.6, 1.03], [0.8, 1.04], [1.0, 1.05]];
+
+        const personY = interpolateKeyframes(progress, personYPoints);
+        const personOpacity = clamp(interpolateKeyframes(progress, personOpacityPoints), 0, 1);
+        const personScale = interpolateKeyframes(progress, personScalePoints);
+
+        imageWrap.style.transform = `translate3d(0, ${personY.toFixed(2)}px, 0) scale3d(${personScale.toFixed(3)}, ${personScale.toFixed(3)}, 1)`;
+        imageWrap.style.opacity = personOpacity.toFixed(3);
+
+        // 4. Ambient Golden Aura behind person
+        if (ambientGlow) {
+          const glowY = personY * 0.55;
+          const glowOpacity = clamp(personOpacity * 0.65, 0, 0.85);
+          const glowScale = interpolateKeyframes(progress, [[0.0, 1.0], [0.6, 1.15], [1.0, 1.25]]);
+          ambientGlow.style.transform = `translate3d(0, ${glowY.toFixed(2)}px, 0) scale3d(${glowScale.toFixed(3)}, ${glowScale.toFixed(3)}, 1)`;
+          ambientGlow.style.opacity = glowOpacity.toFixed(3);
+        }
+
+        // 5. LAYER 3: HERO TEXT INDEPENDENT GRADUAL SCROLL EXIT
+        // Exact specifications:
+        // Heading: translateY: 0 -> -50px
+        // Paragraph: translateY: 0 -> -65px
+        // Birthday message: translateY: 0 -> -80px
+        // All text opacity: 1 -> 0
+        const yFactor = isMobile ? 0.5 : 1.0;
+
+        const textConfigs = [
+          {
+            el: heroLabel,
+            yPts: [[0, 0], [0.3, -8 * yFactor], [0.6, -18 * yFactor], [0.8, -25 * yFactor], [1.0, -30 * yFactor]],
+            opPts: [[0, 1.0], [0.3, 0.95], [0.6, 0.60], [0.8, 0.25], [1.0, 0.0]]
+          },
+          {
+            el: heroTitle,
+            yPts: [[0, 0], [0.3, -10 * yFactor], [0.6, -24 * yFactor], [0.8, -35 * yFactor], [1.0, -42 * yFactor]],
+            opPts: [[0, 1.0], [0.3, 0.98], [0.6, 0.65], [0.8, 0.28], [1.0, 0.0]]
+          },
+          {
+            el: heroTagline,
+            yPts: [[0, 0], [0.3, -12 * yFactor], [0.6, -28 * yFactor], [0.8, -40 * yFactor], [1.0, -50 * yFactor]],
+            opPts: [[0, 1.0], [0.3, 0.95], [0.6, 0.60], [0.8, 0.25], [1.0, 0.0]]
+          },
+          {
+            el: heroDesc,
+            yPts: [[0, 0], [0.3, -15 * yFactor], [0.6, -35 * yFactor], [0.8, -50 * yFactor], [1.0, -65 * yFactor]],
+            opPts: [[0, 1.0], [0.3, 0.92], [0.6, 0.55], [0.8, 0.20], [1.0, 0.0]]
+          },
+          {
+            el: heroHighlightName,
+            // Relative translateY within heroDesc to reach -70px total
+            yPts: [[0, 0], [0.6, -2 * yFactor], [0.8, -4 * yFactor], [1.0, -5 * yFactor]],
+            opPts: [[0, 1.0], [1.0, 1.0]]
+          },
+          {
+            el: heroBdayText,
+            yPts: [[0, 0], [0.3, -18 * yFactor], [0.6, -42 * yFactor], [0.8, -62 * yFactor], [1.0, -80 * yFactor]],
+            opPts: [[0, 1.0], [0.3, 0.90], [0.6, 0.50], [0.8, 0.18], [1.0, 0.0]]
+          },
+          {
+            el: heroBdayHeart,
+            yPts: [[0, 0], [0.3, -20 * yFactor], [0.6, -45 * yFactor], [0.8, -66 * yFactor], [1.0, -85 * yFactor]],
+            opPts: [[0, 1.0], [0.3, 0.90], [0.6, 0.48], [0.8, 0.16], [1.0, 0.0]]
+          },
+          {
+            el: heroTamilBanner,
+            yPts: [[0, 0], [0.3, -22 * yFactor], [0.6, -48 * yFactor], [0.8, -70 * yFactor], [1.0, -90 * yFactor]],
+            opPts: [[0, 1.0], [0.3, 0.88], [0.6, 0.45], [0.8, 0.15], [1.0, 0.0]]
+          }
+        ];
+
+        textConfigs.forEach(item => {
+          if (!item.el) return;
+          item.el.style.transition = 'none';
+          const tY = interpolateKeyframes(progress, item.yPts);
+          const tOp = clamp(interpolateKeyframes(progress, item.opPts), 0, 1);
+          item.el.style.transform = `translate3d(0, ${tY.toFixed(2)}px, 0)`;
+          item.el.style.opacity = tOp.toFixed(3);
+        });
+      }
+
+      window.updateHeroScroll = update;
+
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            update();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+    }
+
+    // =========================================================
+    // 9. SECTION-BY-SECTION BIDIRECTIONAL ENTRANCE ANIMATIONS
+    // =========================================================
+    function initSectionScrollAnimations() {
+      const sections = document.querySelectorAll(
+        '#prologue, #school, #college, #comedy-vault, #character, #level22'
+      );
+
+      if (!('IntersectionObserver' in window)) {
+        sections.forEach(s => s.classList.add('revealed'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // Bidirectional scroll: reveal when entering viewport, reverse smoothly when scrolling up/away
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          } else {
+            entry.target.classList.remove('revealed');
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: [0, 0.15]
+      });
+
+      sections.forEach(section => observer.observe(section));
+    }
+
+    // Initialize Scroll Animations & Hero Entrance
+    document.addEventListener('DOMContentLoaded', () => {
+      initHeroScrollAnimation();
+      initSectionScrollAnimations();
+
+      // If main story is already revealed (e.g. gateway unlocked/bypassed)
+      const mainStory = document.getElementById('main-story');
+      const heroSection = document.getElementById('hero-section');
+      if (heroSection && mainStory && !mainStory.classList.contains('opacity-0')) {
+        setTimeout(() => {
+          heroSection.classList.add('hero-revealed');
+        }, 150);
+      }
+    });
+
+    initHeroScrollAnimation();
+    initSectionScrollAnimations();
+  </script>
+</body>
+
+</html>
